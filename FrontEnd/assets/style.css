@@ -142,8 +142,25 @@ h3{
 	padding-top: 10px;
 }
 
+
+/*======= Fin section gallery =======*/
+/*======= Section Filter ======*/
+.filter{
+	display: flex;
+	justify-content: center;
+	gap: 10px;
 }
-/*======= section gallery =======*/
+.styled-button{
+	border: 1px solid #829793;
+	border-radius: 60px;
+	font-family: 'Syne';
+	font-size: 16px;
+	text-align: center;
+}
+button:focus{
+	background-color: #1D6154;
+}
+/*======= Fin Section Filter ======*/
 #contact {
 	width: 50%;
 margin: auto;

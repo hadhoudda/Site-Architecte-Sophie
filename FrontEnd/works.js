@@ -12,19 +12,18 @@ function descripitionWorks(works){
         titleElement.innerText = article.title;
         const imageElement = document.createElement("img");
         imageElement.src = article.imageUrl;
-        //const categoryIdElement = document.createElement(p);
-       // categoryIdElement.innerText = '${article.categoryId}';
-        //const userIdElement = document.createElement(p);
-        //userIdElement.innerText = '${userId.categoryId}';
-
         //On rattache la balise article a la section gallery
         sectionGallery.appendChild(worksElement);
         // image en position haut 
         worksElement.appendChild(imageElement);
         worksElement.appendChild(titleElement);
-        
-       // worksElement.appendChild(categoryIdElement);
-      //  worksElement.appendChild(userIdElement);
+        //filtre
+        //const categoryIdElement = document.createElement(p);
+        // categoryIdElement.innerText = article.categoryId;
+        //const userIdElement = document.createElement(p);
+        //userIdElement.innerText = userId.categoryId;
+        // worksElement.appendChild(categoryIdElement);
+        // worksElement.appendChild(userIdElement);
 
     }
 }
