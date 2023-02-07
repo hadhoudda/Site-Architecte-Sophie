@@ -17,14 +17,16 @@ function descripitionWorks(works){
         // image en position haut 
         worksElement.appendChild(imageElement);
         worksElement.appendChild(titleElement);
-        //filtre
-        //const categoryIdElement = document.createElement(p);
-        // categoryIdElement.innerText = article.categoryId;
-        //const userIdElement = document.createElement(p);
-        //userIdElement.innerText = userId.categoryId;
-        // worksElement.appendChild(categoryIdElement);
-        // worksElement.appendChild(userIdElement);
-
     }
 }
 descripitionWorks(works);
+//filtre
+const boutonFiltreAllWorks = document.querySelector("#all-works");
+boutonFiltreAllWork.addEventListener("click", function () {
+  
+    document.querySelector(".gallery").innerHTML = "";
+    descripitionWorks(works);
+
+});
+
+
