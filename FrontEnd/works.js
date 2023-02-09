@@ -21,12 +21,37 @@ function descripitionWorks(works){
 }
 descripitionWorks(works);
 //filtre
-const boutonFiltreAllWorks = document.querySelector("#all-works");
-boutonFiltreAllWork.addEventListener("click", function () {
-  
+
+const boutonFiltreAllWorks = document.querySelector(".button-all-works");
+buttonFiltreAllWork.addEventListener("click", function () {
     document.querySelector(".gallery").innerHTML = "";
     descripitionWorks(works);
 
 });
+switch(works[0]){
+    /// filtre les photos objets
+    case 1:
+        const boutonFiltreObject = document.querySelector(".button-object");
+        buttonFiltreObject.addEventListener("click", function (){
+            document.querySelector(".gallery").innerHTML = "";
+            descripitionWorks(works);
+        });
+        break;
+    // filtres les photos appartements
+    case 2:
+        const boutonFiltreApartement = document.querySelector(".button-apartment");
+        buttonFiltreApartement.addEventListener("click", function (){
+            document.querySelector(".gallery").innerHTML = "";
+            descripitionWorks(works);
+        });
+        break;
+    // filtres les photos hôtels
+    case 3:
+        const boutonFiltreHoitel = document.querySelector(".button-hotel");
+        buttonFiltreObject.addEventListener("click", function (){
+            document.querySelector(".gallery").innerHTML = "";
+            descripitionWorks(works);   
+        });
+        break;
 
-
+}
