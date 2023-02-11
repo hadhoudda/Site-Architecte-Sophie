@@ -7,9 +7,11 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
-	<!--<meta name="description" content="">-->
+	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
-	<script type="module" src="works.js"></script>
+	<script type="module" src="app.js" type="module"></script> 
+	<!-- defer c'est à dire charge la page et appre execute le code js -->
+	
 </head>
 <body>
 <header>
@@ -37,12 +39,9 @@
 	</section>
 	<section id="portfolio">
 		<h2>Mes Projets</h2>
-		<section class="filter">
-			<button class ="styled-button button-all-works " type="button"> Tous</button>
-			<button class ="styled-button button-object " type="button"> Objets</button>
-			<button class ="styled-button button-apartment " type="button"> Appartements</button>
-			<button class ="styled-button button-hotel "  type="button"> Hôtels & restaurants</button>
-		</section>
+		<div class="filter">
+			
+		<filtre/>
 		<div class="gallery">
 			<!-- Récupération des photos depuis l'API-->
 		</div>
