@@ -8,7 +8,7 @@ const getData = async (url) => {
             throw new Error(`an error occured with status: ${reponse.status}`);
         }
         const works = await reponse.json();
-        afficherPage(works);
+        afficherProject(works);
     } catch (error) {
         alert(error);
     }
@@ -30,21 +30,18 @@ buttonAllWorks.addEventListener("click", function () {
 });
 const buttonFiltreObject = document.getElementById("button-object");
 buttonFiltreObject.addEventListener("click", function () {
-    document.querySelector(".gallery").innerHTML = "";
-    filtreAffichager(1);
+    filtreProjects(1);
 });
 const buttonFiltreApartement = document.getElementById("button-apartment");
 buttonFiltreApartement.addEventListener("click", function () {
-    document.querySelector(".gallery").innerHTML = "";
-    filtreAffichager(2);
+    filtreProjects(2);
 });
 const buttonFiltreHotel = document.getElementById("button-hotel");
 buttonFiltreHotel.addEventListener("click", function () {
-    document.querySelector(".gallery").innerHTML = "";
-    filtreAffichager(3);
+    filtreProjects(3);
 });
 //fonction d'affichage des projets
-function afficherPage(works) {
+const afficherProject=(works)=> {
     for (let elem in works) {
         const article = works[elem];
         const sectionGallery = document.querySelector(".gallery");
@@ -61,11 +58,16 @@ function afficherPage(works) {
 }
 
 //fonction de filtre des projets
-function filtreAffichager(id) {
-    const filtreWorks = array.from(getData("http://localhost:5678/api/works"));
-    for (let elem of filtreWorks) {
-        if (elem.categoryId == id) {
-            afficherPage(works);
+const filtreProjects=(id)=> {
+    document.querySelector(".gallery").innerHTML = "";
+    const project =getData("http://localhost:5678/api/works");
+    for (let elem in project) {
+        if ( '${article.categoryId}' != id) {
+           delete project[elem];
         }
     }
+    //2eme essaie
+    //const resultatFiltre = project.filter(project =>project.article.categoryId=id);
+
 }
+
