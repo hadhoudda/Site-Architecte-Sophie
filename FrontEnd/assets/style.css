@@ -149,6 +149,7 @@ h3{
 	display: flex;
 	justify-content: center;
 	gap: 10px;
+	margin-bottom: 20px;
 }
 .filter-button{
 	border: 1px solid #829793;
@@ -159,6 +160,7 @@ h3{
 }
 button:focus{
 	background-color: #1D6154;
+	color: white;
 }
 /*======= Fin Section Filter ======*/
 #contact {
