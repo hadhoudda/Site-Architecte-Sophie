@@ -145,6 +145,15 @@ h3{
 
 /*======= Fin section gallery =======*/
 /*======= Section Filter ======*/
+/* .active {
+	width: 100%;
+	transition: width .3s;
+}
+.inactive{
+	width: 0;
+	transition: width .3s;
+} */
+
 .filter{
 	display: flex;
 	justify-content: center;
@@ -157,6 +166,7 @@ h3{
 	font-family: 'Syne';
 	font-size: 16px;
 	text-align: center;
+	cursor: pointer;
 }
 button:focus{
 	background-color: #1D6154;
