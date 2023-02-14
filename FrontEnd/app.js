@@ -41,7 +41,7 @@ buttonCategory3.addEventListener("click", function () {
     filtreProjects(3);
 });
 //fonction d'affichage des projets
-const afficherProject=(works)=> {
+const afficherProject = (works) => {
     for (let elem in works) {
         const article = works[elem];
         const sectionGallery = document.querySelector(".gallery");
@@ -51,26 +51,23 @@ const afficherProject=(works)=> {
         const imageElement = document.createElement("img");
         imageElement.src = article.imageUrl;
         //imageElement.classList.add("active");
-        const categorId = document.createElement("p")
-        categorId.innerText= article.categoryId;
-       // worksElement.setAttribute("data-cat", article.categoryId);
+        const categorId = document.createElement("p");
+        categorId.innerText = article.categoryId;
+        // worksElement.setAttribute("data-cat", article.categoryId);
         sectionGallery.appendChild(worksElement);
         worksElement.appendChild(imageElement);
         worksElement.appendChild(titleElement);
-        
+        console.log(categorId )
     }
-}
-
+};
 
 // //fonction de filtre des projets
-const filtreProjects=(id)=> {
+const filtreProjects = (id) => {
     document.querySelector(".gallery").innerHTML = "";
-    const project = getData("http://localhost:5678/api/works")
-    for (let elem in project){
-        if(categorId != id){
-           delete project[elem ]
+    const project = getData("http://localhost:5678/api/works");
+    for (let elem in project) {
+        if (categoryId != id) {
+            project.pop()
         }
     }
-
-}
-
+};
