@@ -1,19 +1,25 @@
+
+let works;
+
 //fonction pour récupérer des infos depuis API HTTP
 const getData = async (url) => {
     try {
         const reponse = await fetch(url);
-        console.log(reponse);
 
         if (!reponse.ok) {
             throw new Error(`an error occured with status: ${reponse.status}`);
         }
-        const works = await reponse.json();
+
+        works = await reponse.json();
+
         afficherProject(works);
+
     } catch (error) {
+
         alert(error);
     }
-    console.log();
 };
+
 getData("http://localhost:5678/api/works");
 //ajouter les bouttons de filtre
 const sectionFilter = document.querySelector(".filter");
@@ -23,25 +29,38 @@ sectionFilter.innerHTML =
     '<button id="button-apartment" class="filter-button"> Appartements</button>' +
     '<button id="button-hotel" class="filter-button"> Hôtels & restaurants</button>';
 
-const buttonAllCategory = document.getElementById("button-all-works");
+const buttonAllCategory = document.querySelector("#button-all-works");
+const buttonCategory1 = document.querySelector("#button-object");
+const buttonCategory2 = document.querySelector("#button-apartment");
+const buttonCategory3 = document.querySelector("#button-hotel");
+
 buttonAllCategory.addEventListener("click", function () {
-    document.querySelector(".gallery").innerHTML = "";
-    getData("http://localhost:5678/api/works");
+    
+     return afficherProject(works);
+    
 });
-const buttonCategory1 = document.getElementById("button-object");
+
+
 buttonCategory1.addEventListener("click", function () {
-    filtreProjects(1);
+    
+    return afficherProject(filtreProjects(works, "Objets"));
+
 });
-const buttonCategory2 = document.getElementById("button-apartment");
+
 buttonCategory2.addEventListener("click", function () {
-    filtreProjects(2);
+
+    return afficherProject(filtreProjects(works, "Appartements"));
+
 });
-const buttonCategory3 = document.getElementById("button-hotel");
+
 buttonCategory3.addEventListener("click", function () {
-    filtreProjects(3);
+
+    return afficherProject(filtreProjects(works, "Hotels & restaurants"));
+
 });
 //fonction d'affichage des projets
 const afficherProject = (works) => {
+    document.querySelector(".gallery").innerHTML = null;
     for (let elem in works) {
         const article = works[elem];
         const sectionGallery = document.querySelector(".gallery");
@@ -57,17 +76,19 @@ const afficherProject = (works) => {
         sectionGallery.appendChild(worksElement);
         worksElement.appendChild(imageElement);
         worksElement.appendChild(titleElement);
-        console.log(categorId )
     }
 };
 
 // //fonction de filtre des projets
-const filtreProjects = (id) => {
-    document.querySelector(".gallery").innerHTML = "";
-    const project = getData("http://localhost:5678/api/works");
-    for (let elem in project) {
-        if (categoryId != id) {
-            project.pop()
-        }
-    }
+const filtreProjects = (works, filterName) => {
+      
+       return works.filter((work)=>{
+
+            if(work?.category?.name === filterName){
+
+                return work;
+            }
+
+       });
+
 };
