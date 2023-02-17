@@ -1,20 +1,20 @@
+let works;
 //fonction pour récupérer des infos depuis API HTTP
-const getData = async (url) => {
+const getData = async () => {
     try {
-        const reponse = await fetch(url);
+        const reponse = await fetch("http://localhost:5678/api/works");
         console.log(reponse);
-
         if (!reponse.ok) {
             throw new Error(`an error occured with status: ${reponse.status}`);
         }
-        const works = await reponse.json();
+        works = await reponse.json();
         afficherProject(works);
+        console.log(works);
     } catch (error) {
         alert(error);
     }
-    console.log();
 };
-getData("http://localhost:5678/api/works");
+getData();
 //ajouter les bouttons de filtre
 const sectionFilter = document.querySelector(".filter");
 sectionFilter.innerHTML =
@@ -22,26 +22,30 @@ sectionFilter.innerHTML =
     '<button id="button-object" class="filter-button"> Objets</button>' +
     '<button id="button-apartment" class="filter-button"> Appartements</button>' +
     '<button id="button-hotel" class="filter-button"> Hôtels & restaurants</button>';
-
 const buttonAllCategory = document.getElementById("button-all-works");
+const buttonCategory1 = document.querySelector("#button-object");
+const buttonCategory2 = document.querySelector("#button-apartment");
+const buttonCategory3 = document.querySelector("#button-hotel");
 buttonAllCategory.addEventListener("click", function () {
     document.querySelector(".gallery").innerHTML = "";
-    getData("http://localhost:5678/api/works");
+    getData();
+    return afficherProject(works);
 });
-const buttonCategory1 = document.getElementById("button-object");
 buttonCategory1.addEventListener("click", function () {
     filtreProjects(1);
+    return afficherProject(filtreProjects(works, "Objets"));
 });
-const buttonCategory2 = document.getElementById("button-apartment");
 buttonCategory2.addEventListener("click", function () {
     filtreProjects(2);
+    return afficherProject(filtreProjects(works, "Appartements"));
 });
-const buttonCategory3 = document.getElementById("button-hotel");
 buttonCategory3.addEventListener("click", function () {
     filtreProjects(3);
+    return afficherProject(filtreProjects(works, "Hotels & restaurants"));
 });
 //fonction d'affichage des projets
 const afficherProject = (works) => {
+    document.querySelector(".gallery").innerHTML = null;
     for (let elem in works) {
         const article = works[elem];
         const sectionGallery = document.querySelector(".gallery");
@@ -50,24 +54,19 @@ const afficherProject = (works) => {
         titleElement.innerText = article.title;
         const imageElement = document.createElement("img");
         imageElement.src = article.imageUrl;
-        //imageElement.classList.add("active");
-        const categorId = document.createElement("p");
-        categorId.innerText = article.categoryId;
+        //const categorId = document.createElement("p");
+        //categorId.innerText = article.categoryId;
         // worksElement.setAttribute("data-cat", article.categoryId);
         sectionGallery.appendChild(worksElement);
         worksElement.appendChild(imageElement);
         worksElement.appendChild(titleElement);
-        console.log(categorId )
     }
 };
-
-// //fonction de filtre des projets
-const filtreProjects = (id) => {
-    document.querySelector(".gallery").innerHTML = "";
-    const project = getData("http://localhost:5678/api/works");
-    for (let elem in project) {
-        if (categoryId != id) {
-            project.pop()
+//fonction de filtre des projets
+const filtreProjects = (work, filterName) => {
+    return works.filter((work) => {
+        if (work?.category?.name === filterName) {
+            return work;
         }
-    }
+    });
 };
