@@ -172,14 +172,18 @@ a {
 	font-weight: 700;
 	margin: 40px;
 }
-form{
+.form-connect{
 	display: flex;
 	flex-direction: column;
 	gap:30px;
 	justify-content:center;
 	align-items: center;
 }
-form input{
+.form-login{
+	display: flex;
+	flex-direction: column;
+}
+.form-connect input{
 	width: 379px;
 	height: 51px;
 	box-shadow: 0px 4px 14px #e1e2e2;
@@ -194,6 +198,12 @@ form input{
 .pwd{
 	text-decoration: underline #bebbbb;
 } 
+.text-valide{
+	color:green;
+}
+.text-no-valide{
+	color:red;
+}
 /*======= Fin Section connexion ======*/
 #contact {
 	width: 50%;
