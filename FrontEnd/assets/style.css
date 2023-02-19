@@ -141,26 +141,13 @@ li:hover {
 h3{
 	padding-top: 10px;
 }
-
-
-/*======= Fin section gallery =======*/
-/*======= Section Filter ======*/
-/* .active {
-	width: 100%;
-	transition: width .3s;
-}
-.inactive{
-	width: 0;
-	transition: width .3s;
-} */
-
 .filter{
 	display: flex;
 	justify-content: center;
 	gap: 10px;
 	margin-bottom: 20px;
 }
-.filter-button{
+.style-button{
 	border: 1px solid #829793;
 	border-radius: 60px;
 	font-family: 'Syne';
@@ -173,6 +160,41 @@ button:focus{
 	color: white;
 }
 /*======= Fin Section Filter ======*/
+/*======= Section connexion ======*/
+a {
+	text-decoration: none;
+	color: black;
+}
+.title-login{
+	text-align: center; 
+	color: #1D6154;
+	font-size: 30px;
+	font-weight: 700;
+	margin: 40px;
+}
+form{
+	display: flex;
+	flex-direction: column;
+	gap:30px;
+	justify-content:center;
+	align-items: center;
+}
+form input{
+	width: 379px;
+	height: 51px;
+	box-shadow: 0px 4px 14px #e1e2e2;
+	border:  #FFFFFF;
+}
+#btn-connect{
+	background-color: #1D6154;
+	color: white;
+	Width :179px;
+	Height : 36px;
+}
+.pwd{
+	text-decoration: underline #bebbbb;
+} 
+/*======= Fin Section connexion ======*/
 #contact {
 	width: 50%;
 margin: auto;

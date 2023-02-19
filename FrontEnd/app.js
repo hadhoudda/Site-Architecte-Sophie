@@ -3,7 +3,7 @@ let works;
 const getData = async () => {
     try {
         const reponse = await fetch("http://localhost:5678/api/works");
-
+console.log(reponse)
         if (!reponse.ok) {
             throw new Error(`an error occured with status: ${reponse.status}`);
         }
@@ -12,15 +12,16 @@ const getData = async () => {
     } catch (error) {
         alert(error);
     }
+    console.log(works)
 };
 getData();
 //ajouter les bouttons de filtre
 const sectionFilter = document.querySelector(".filter");
 sectionFilter.innerHTML =
-    '<button id="button-all-works" class="filter-button" type= "button"> Tous</button>' +
-    '<button id="button-object" class="filter-button"> Objets</button>' +
-    '<button id="button-apartment" class="filter-button"> Appartements</button>' +
-    '<button id="button-hotel" class="filter-button"> Hôtels & restaurants</button>';
+    '<button id="button-all-works" class="style-button" type= "button"> Tous</button>' +
+    '<button id="button-object" class="style-button"> Objets</button>' +
+    '<button id="button-apartment" class="style-button"> Appartements</button>' +
+    '<button id="button-hotel" class="style-button"> Hôtels & restaurants</button>';
 const buttonAllCategory = document.getElementById("button-all-works");
 const buttonCategory1 = document.querySelector("#button-object");
 const buttonCategory2 = document.querySelector("#button-apartment");
