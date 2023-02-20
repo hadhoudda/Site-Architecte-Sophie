@@ -7,7 +7,7 @@ sectionConnect.email.addEventListener('change', function(){
 
 
 //fonction validEmail
-const validEmail = function(inputEmail){
+const validEmail = (inputEmail) => {
 let emailRegExp = new RegExp('^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$','g');
 let testEmail = emailRegExp.test(inputEmail.value)
 console.log(testEmail)
@@ -32,7 +32,7 @@ sectionConnect.password.addEventListener('change', function(){
 })
 
 //fonction validPassword
-const validPassword = function(inputPassword){
+const validPassword = (inputPassword) => {
     let msg;
     let valide = false;
   //au moin 6 caracter et au moin 1 majuscul et 1 minuscul et 1 chiffre
@@ -70,12 +70,26 @@ const validPassword = function(inputPassword){
     }
 
     }
-
+    //fonction connexion et envoi des donnes
+    const submit = async()=> {
+          let reponse =  await fetch('http://localhost:5678/api/users/login', {
+            method: 'POST',
+            headers: {
+                accept: 'application/json'
+            },
+        })
+         let resulta =  await reponse.json();
+         if((sectionConnect.email==resulta.email)&&(sectionConnect.password==resulta.password)){
+            getData();
+         }
+         else{
+            alert("Erreur dans l’identifiant ou le mot de passe")
+         }
+    }
     //ecouter la soumission de formulaire
     sectionConnect.addEventListener('submit', function(e){
         e.preventDefault();
         if ((validEmail(sectionConnect.email))&&(validPassword(sectionConnect.password))){
-           sectionConnect.submit(fetch());
+           sectionConnect.submit();
         }
-    
     })

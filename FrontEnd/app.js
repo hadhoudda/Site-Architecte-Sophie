@@ -2,7 +2,7 @@ let works;
 //fonction pour récupérer des infos depuis API HTTP
 const getData = async () => {
     try {
-        const reponse = await fetch("http://localhost:5678/api/works");
+        const reponse = await fetch("http://localhost:5678/api/works")//(config.host + "/api/works");
 console.log(reponse)
         if (!reponse.ok) {
             throw new Error(`an error occured with status: ${reponse.status}`);

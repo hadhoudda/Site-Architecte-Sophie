@@ -182,6 +182,7 @@ a {
 .form-login{
 	display: flex;
 	flex-direction: column;
+	gap: 4px;
 }
 .form-connect input{
 	width: 379px;
