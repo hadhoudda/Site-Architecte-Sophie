@@ -3,7 +3,7 @@ let works;
 const getData = async () => {
     try {
         const reponse = await fetch("http://localhost:5678/api/works")//(config.host + "/api/works");
-console.log(reponse)
+        console.log(reponse)
         if (!reponse.ok) {
             throw new Error(`an error occured with status: ${reponse.status}`);
         }
@@ -51,9 +51,6 @@ const afficherProject = (works) => {
         titleElement.innerText = article.title;
         const imageElement = document.createElement("img");
         imageElement.src = article.imageUrl;
-        //const categorId = document.createElement("p");
-        //categorId.innerText = article.categoryId;
-        // worksElement.setAttribute("data-cat", article.categoryId);
         sectionGallery.appendChild(worksElement);
         worksElement.appendChild(imageElement);
         worksElement.appendChild(titleElement);
@@ -67,6 +64,3 @@ const filtreProjects = (work, filterName) => {
         }
     });
 }
-
-
-

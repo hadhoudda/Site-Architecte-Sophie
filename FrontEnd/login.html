@@ -9,6 +9,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
+    <script src="app.js" type="module"></script>
     </head>
     <body>
         <header>
@@ -31,25 +32,26 @@
            
                 <!-- code en js -->
                 <h2 class="title-login">Log In</h2>
-                <form method="post" action="http://localhost:5678/api/users/login" class="form-connect">
-                    <div class="form-login">
+                <form class="form-login">
+                    <!-- method="post" action="http://localhost:5678/api/users/login"  -->
+                    <div class="form-input">
                     <!-- Email -->
                         <label for="email">E-mail</label><br>
-                        <input type="text" class ="form-champ" name = "email"/>
+                        <input type="text" class ="form-champ" name = "email" id="form-email"/>
                         <small></small>
                     </div>
                     <!-- mot de passe -->
-                    <div class="form-login">
+                    <div class="form-input">
                         <label for="password">Mot de passe </label><br>
                         <input type="text" class ="form-champ" name="password">
                         <small></small>
                     </div>
                     <!-- boutton de connexion -->
-                    <div class="form-login">
-                        <button type="submit" class="style-button" id="btn-connect">Se connecter</button>
+                    <div class="form-input">
+                        <button type="submit" class="style-button" id="btn-connect" id="login-button">Se connecter</button>
                     </div>
                     <!-- mot de passe oublié -->
-                    <div class="form-login">
+                    <div class="form-input">
                         <a href="#" class="pwd">Mot de passe oublié</a>
                     </div>
                 </form>
