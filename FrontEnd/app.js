@@ -1,5 +1,4 @@
 let works;
-//fonction pour récupérer des infos depuis API HTTP
 const getData = async () => {
     try {
         const reponse = await fetch("http://localhost:5678/api/works")//(config.host + "/api/works");
@@ -11,6 +10,7 @@ const getData = async () => {
         afficherProject(works);
     } catch (error) {
         alert(error);
+        //document.querySelector('.filter').innerHTML=('Impossible de télècharger les porjets essayer plus tard')
     }
     console.log(works)
 };

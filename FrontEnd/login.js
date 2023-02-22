@@ -1,3 +1,5 @@
+//import {getData , afficherProject , filtreProjects } from "./app.js";
+
 const sectionConnect = document.querySelector(".form-login");
 //Ecoute la modification de l'email
 sectionConnect.email.addEventListener('change', function(){
@@ -66,7 +68,8 @@ const validPassword = (inputPassword) => {
     }
  }
 //ecouter la soumission de formulaire
-sectionConnect.addEventListener('submit', function(e){
+const buttonConnect = document.querySelector("#btn-connect");
+buttonConnect.addEventListener('submit', function(e){
         e.preventDefault();
         if ((validEmail(sectionConnect.email))&&(validPassword(sectionConnect.password))){
            sectionConnect.submit(sectionConnect.email.value,sectionConnect.password.value )
@@ -74,17 +77,15 @@ sectionConnect.addEventListener('submit', function(e){
 })
 //fonction boutton de connexion
 const submit = (mail , pwd)=> {
-    let reponse =  fetch('http://localhost:5678/api/users/login', {
+    const idMail = stringify(mail);
+    const idPwd = stringify(pwd);
+    const idLoginMail =window.localStorage.setItem("keyMail", mail);
+    const idLoginPwd =window.localStorage.setItem("keyPwd",pwd);
+    const reponse =  fetch('http://localhost:5678/api/users/login', {
         method: 'post',
-        headers:{
-            'Content-Type': 'application/json'
-        },
+        headers:{'accept': 'application/json' , 'Content-Type': 'application/json' },
         body: JSON.stringify({email: email, password: password})
     })
-    if(mail==email && pwd==password){
-       sectionConnect=  fetch('index.html')+= innerHTML('je le code apres')
-    }
-    else{
-sectionConnect= innerHTML("Erreur dans l`identifiant ou le mot de passe")
-    }
+    .then(reponse =>reponse.json())
+    .then(console.log(reponse))
 }
