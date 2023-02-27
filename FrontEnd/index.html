@@ -7,16 +7,21 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
-	<meta name="description" content="">
+	<script src="https://kit.fontawesome.com/32fe4a8f5c.js" crossorigin="anonymous"></script>
+    <meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
     <script src="app.js" type="module"></script>
-    
+ 
     </head>
     <body>
         
         <header>
-            <div id ="header-black" class="hide">
-
+            <div id ="header-black" class="hide ">
+                     <p class="text-edit">
+                    <a href="#"><i class="fa-solid fa-pen-to-square style-white "></i></a>
+                     Mode édition
+                    <button class="style-btn-publier">publier les changements</button>
+                </p>
         </div>
             <div class="header">
             <h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
@@ -37,9 +42,17 @@
         </header>
         <main>
             <section id="introduction">
-                <figure>
+                <figure class="photo-introduction">
                     <img src="./assets/images/sophie-bluel.png" alt="" />
+                    <div id="button-edit-photo" class="hide">
+                        <p>
+                            <a href ="#">
+                            <i class="fa-solid fa-pen-to-square"></i></a>
+                             modifier
+                        </p>
+                    </div>
                 </figure>
+               
                 <article>
                     <h2>Designer d'espace</h2>
                     <p>
@@ -62,7 +75,16 @@
                 </article>
             </section>
             <section id="portfolio">
+                <div class="edit-project">
                 <h2>Mes Projets</h2>
+                <div id="button-edit-projet" class="hide">
+                    <p>
+                        <a href ="#">
+                        <i class="fa-solid fa-pen-to-square"></i></a>
+                         modifier
+                    </p>
+                </div>
+            </div>
                 <div class="filter ">
 					<!-- code en js -->
 				</div>
@@ -98,6 +120,6 @@
                 </ul>
             </nav>
         </footer>
-        <script src ="login.js" type="module"></script>
+       
     </body>
 </html>

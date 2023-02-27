@@ -195,7 +195,7 @@ h3{
 	display: flex;
 	justify-content: center;
 	gap: 10px;
-	margin-bottom: 20px;
+	margin-bottom: 50px;
 }
 .style-button{
 	border: 1px solid #829793;
@@ -279,20 +279,58 @@ figcaption{
 }
 /*======= Fin Section connexion ======*/
 /*========== section header-balck========*/
-
-.edit-show{
+.show-head-black{
+	background-color:black;
+	height: 50px;
 	display: flex;
-	background-color: black;
-height: 50px;
+	justify-content: center;
+	padding-bottom: 10px;
+	margin-left: -200px;
+	margin-right: -200px;
+	
+}
 
+.text-edit,
+.style-white{
+	color: white;
+}
+
+.style-btn-publier{
+	background-color: white;
+	color: black;
+	font-size: 14px;
+	align-items: center;
+	width: 216px;
+	height: 38px;
+	border-radius: 60px;
+	
+}
+.photo-introduction{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.show-edit-photo{
+	display: flex;
+	padding:3% 0 0 10%;
+}
+.edit-project{
+	margin-bottom: 50px;
+	display: flex;
+	justify-content: center;
+	gap: 31px;
+}
+.show-edit-projet{
+	display: flex;
+	padding-top:10px;
 }
 /*====================*/
-.show{
-
-   display:inline-block;
-
+.show-message{
+   display:flex;
+   justify-content: center;
+   color: green;
+   font-size: larger;
 }
-
 .hide{
 
 	display:none;

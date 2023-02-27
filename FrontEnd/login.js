@@ -1,9 +1,6 @@
-
-document.addEventListener("DOMContentLoaded", ()=>{ //
-  checkForm();
+document.addEventListener("DOMContentLoaded", ()=>{ 
+checkForm();
 });
-
-
 function checkForm(){
   // ()=> This is arrow functions https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
   document.querySelector("#btn-connect").addEventListener("click", (event)=>{
@@ -34,12 +31,6 @@ function checkForm(){
            }
           localStorage.setItem("userInfos", JSON.stringify(data))
           document.location.href = "index.html";
-          //  const headerBalck = document.querySelector('#header-black');
-            //supprime les boutton de 
-            
-             //.classList.replace("hide","edit-show");
-          
-         
         }).catch((error)=>{
           console.log(error);
         })
@@ -51,7 +42,7 @@ function checkForm(){
 
       errorMessage.textContent = message;
 
-      errorMessage.classList.replace("hide", "show");
+      errorMessage.classList.replace("hide", "show-message");
 
       setTimeout(()=>{
 
@@ -65,18 +56,3 @@ function checkForm(){
 
 }
 //////////////////
-function checkIsAdmin(){
-
-  const userInfos = localStorage.getItem("userInfos");
-
-  if(userInfos !== null){
-   //affichage modification page admin
-   const headerBalck = document.querySelector('#header-black');
-   headerBalck.classList.replace("hide","edit-show");
-   // Je peux afficher les boutons de la modale
-   sectionFilter.classList.replace("filter","hide")
-  }
-
-}
-
-checkIsAdmin();

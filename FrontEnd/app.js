@@ -65,3 +65,19 @@ const filtreProjects = (work, filterName) => {
     });
 }
 
+function checkIsAdmin(){
+    const userInfos = localStorage.getItem("userInfos");
+  if(userInfos !== null){
+     //affichage modification page admin
+     //partie haute noir
+     document.querySelector('#header-black').classList.replace("hide","show-head-black");
+    //boutton edit
+    document.querySelector('#button-edit-photo').classList.replace("hide","show-edit-photo");
+    document.querySelector('#button-edit-projet').classList.replace("hide","show-edit-projet");
+     // Je peux afficher les boutons de la modale
+     sectionFilter.classList.replace("filter","hide")
+    localStorage.removeItem("userInfos")
+  }
+  }
+  
+  checkIsAdmin();
