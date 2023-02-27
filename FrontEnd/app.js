@@ -1,12 +1,12 @@
 let works;
 const getData = async () => {
     try {
-        const reponse = await fetch("http://localhost:5678/api/works")//(config.host + "/api/works");
-        console.log(reponse)
-        if (!reponse.ok) {
+        const response = await fetch("http://localhost:5678/api/works")//(config.host + "/api/works");
+        console.log(response)
+        if (!response.ok) {
             throw new Error(`an error occured with status: ${reponse.status}`);
         }
-        works = await reponse.json();
+        works = await response.json();
         afficherProject(works);
     } catch (error) {
         alert(error);
@@ -64,3 +64,4 @@ const filtreProjects = (work, filterName) => {
         }
     });
 }
+
