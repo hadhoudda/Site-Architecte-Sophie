@@ -278,16 +278,13 @@ figcaption{
 	font-size: 10px;
 }
 /*======= Fin Section connexion ======*/
-/*========== section header-balck========*/
+/*========== section  admin========*/
 .show-head-black{
 	background-color:black;
 	height: 50px;
 	display: flex;
 	justify-content: center;
 	padding-bottom: 10px;
-	margin-left: -200px;
-	margin-right: -200px;
-	
 }
 
 .text-edit,
@@ -324,6 +321,12 @@ figcaption{
 	display: flex;
 	padding-top:10px;
 }
+
+.show-edit-text{
+	display: flex;
+	padding-top: 3%;
+	
+}
 /*====================*/
 .show-message{
    display:flex;
@@ -332,9 +335,61 @@ figcaption{
    font-size: larger;
 }
 .hide{
-
 	display:none;
-
+}
+/********** css de modal***************/
+.modal{
+	position:fixed;
+	/*pour centre le modal*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	width:100%;
+	height: 100%;
+	background:rgba(0, 0, 0, 0.3)
+}
+.modal-wrapper{
+	overflow: auto;
+	background-color: white;
+	border-radius: 10px;
+	/* width: 600px; */
+	/* max-width: calc(100vw -20px); */
+	/*100vw une fois la taille de largeur(vw) et (vh hauteur) de l'ecran*/
+	 /* max-height: calc(100vh -20px); */
+	padding: 24px;  
+	width: 630px;
+	height:500px;
+}
+.header-modal{
+	display: flex;
+	justify-content: flex-end;
+}
+.title-modal{
+	font-family: 'Work Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 26px;
+line-height: 30px;
+text-align: center;
 }
 
-
+.footer-modal{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 38px;
+	
+}
+.modal-btn{
+width: 237px;
+height: 36px;
+left: 600px;
+top: 1267px;
+}
+.style-red{
+	color: red;
+	margin: 23px;
+	
+}

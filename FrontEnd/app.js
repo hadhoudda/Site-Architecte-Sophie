@@ -4,7 +4,7 @@ const getData = async () => {
         const response = await fetch("http://localhost:5678/api/works")//(config.host + "/api/works");
         console.log(response)
         if (!response.ok) {
-            throw new Error(`an error occured with status: ${reponse.status}`);
+            throw new Error(`an error occured with status: ${response.status}`);
         }
         works = await response.json();
         afficherProject(works);
@@ -66,8 +66,8 @@ const filtreProjects = (work, filterName) => {
 }
 
 function checkIsAdmin(){
-    const userInfos = localStorage.getItem("userInfos");
-  if(userInfos !== null){
+    const token = localStorage.getItem("token");
+  if(token !== null){
      //affichage modification page admin
      //partie haute noir
      document.querySelector('#header-black').classList.replace("hide","show-head-black");
@@ -75,9 +75,11 @@ function checkIsAdmin(){
     document.querySelector('#button-edit-photo').classList.replace("hide","show-edit-photo");
     document.querySelector('#button-edit-projet').classList.replace("hide","show-edit-projet");
      // Je peux afficher les boutons de la modale
-     sectionFilter.classList.replace("filter","hide")
-    localStorage.removeItem("userInfos")
+    //sectionFilter.classList.replace("filter","hide")
+    //localStorage.removeItem("token")
   }
   }
   
   checkIsAdmin();
+  
+  

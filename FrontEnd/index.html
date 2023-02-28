@@ -11,7 +11,7 @@
     <meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
     <script src="app.js" type="module"></script>
- 
+    <script src="modal.js" type="module"></script>
     </head>
     <body>
         
@@ -44,17 +44,31 @@
             <section id="introduction">
                 <figure class="photo-introduction">
                     <img src="./assets/images/sophie-bluel.png" alt="" />
+                    <!--*******mode edit  boutton de modification image*******-->
                     <div id="button-edit-photo" class="hide">
                         <p>
                             <a href ="#">
-                            <i class="fa-solid fa-pen-to-square"></i></a>
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            </a>
                              modifier
                         </p>
                     </div>
                 </figure>
                
                 <article>
-                    <h2>Designer d'espace</h2>
+                  <!--*******mode edit  boutton de modification text*******-->
+                  <div id="button-edit-text" class="hid">
+                    <p>
+                        <a href ="#">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                        modifier
+                    </p>
+                </div>
+                        <h2>Designer d'espace</h2>
+                   
+        
+                   
                     <p>
                         Je raconte votre histoire, je valorise vos idées. Je
                         vous accompagne de la conception à la livraison finale
@@ -76,15 +90,16 @@
             </section>
             <section id="portfolio">
                 <div class="edit-project">
-                <h2>Mes Projets</h2>
-                <div id="button-edit-projet" class="hide">
-                    <p>
-                        <a href ="#">
-                        <i class="fa-solid fa-pen-to-square"></i></a>
-                         modifier
-                    </p>
+                    <h2>Mes Projets</h2>
+                    <!--********* boutton de modification projet ***********-->
+                    <div id="button-edit-projet" class="hide">
+                        <p>
+                            <a href="#modal1" class="js-modal">
+                            <i class="fa-solid fa-pen-to-square"></i></a>
+                            modifier
+                        </p>
+                    </div>
                 </div>
-            </div>
                 <div class="filter ">
 					<!-- code en js -->
 				</div>
@@ -92,6 +107,25 @@
                     <!-- Récupération des photos depuis l'API-->
                 </div>
             </section>
+            <!-- ========section modal=============== -->
+            <aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="title-modal" style="display: none;">
+                <div class="modal-wrapper">
+                    <div class="header-modal" >
+                       <a href="index.html"> <i class="fa-solid fa-xmark"></i></a>
+                    </div>
+                    <div class="body-modal">
+                        <h3 class="title-modal">Galerie photo</h3>
+                        <div id="galeri-modal">
+                                <!-- tire______________ -->
+                        </div>
+                    </div>
+                    <div class="footer-modal">
+                        <button class="style-button modal-btn">Ajoute une photo</button>
+                        <a href="#" class="style-red">Supprimer la galerie</a>
+                    </div>
+                </div>
+            </aside>
+           <!--============fin section modal===========--> 
             <section id="contact">
                 <h2>Contact</h2>
                 <p>Vous avez un projet ? Discutons-en !</p>
@@ -110,7 +144,6 @@
                     <input type="submit" value="Envoyer" />
                 </form>
             </section>
-           
         </main>
 
         <footer>
@@ -120,6 +153,6 @@
                 </ul>
             </nav>
         </footer>
-       
+        
     </body>
 </html>
