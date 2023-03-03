@@ -11,10 +11,9 @@
     <meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
     <script src="app.js" type="module"></script>
-    <script src="modal.js" type="module"></script>
+    
     </head>
     <body>
-        
         <header>
             <div id ="header-black" class="hide ">
                      <p class="text-edit">
@@ -54,10 +53,9 @@
                         </p>
                     </div>
                 </figure>
-               
                 <article>
                   <!--*******mode edit  boutton de modification text*******-->
-                  <div id="button-edit-text" class="hid">
+                  <div id="button-edit-text" class="hide">
                     <p>
                         <a href ="#">
                         <i class="fa-solid fa-pen-to-square"></i>
@@ -65,10 +63,7 @@
                         modifier
                     </p>
                 </div>
-                        <h2>Designer d'espace</h2>
-                   
-        
-                   
+                    <h2>Designer d'espace</h2>
                     <p>
                         Je raconte votre histoire, je valorise vos idées. Je
                         vous accompagne de la conception à la livraison finale
@@ -108,20 +103,21 @@
                 </div>
             </section>
             <!-- ========section modal=============== -->
-            <aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="title-modal" style="display: none;">
+            <aside id="modal1" class="hide" aria-hidden="true" role="dialog" aria-labelledby="title-modal">
                 <div class="modal-wrapper">
-                    <div class="header-modal" >
-                       <a href="index.html"> <i class="fa-solid fa-xmark"></i></a>
+                    <div class="close-modal" >
+                       <a href="index.html"> <i class="fa-solid fa-xmark "></i></a>
                     </div>
                     <div class="body-modal">
                         <h3 class="title-modal">Galerie photo</h3>
-                        <div id="galeri-modal">
+                        <div class="galeri-modal">
+
                                 <!-- tire______________ -->
                         </div>
                     </div>
                     <div class="footer-modal">
-                        <button class="style-button modal-btn">Ajoute une photo</button>
-                        <a href="#" class="style-red">Supprimer la galerie</a>
+                        <button class=" modal-btn">Ajoute une photo</button>
+                        <a href="#" class="btn-delete-modal">Supprimer la galerie</a>
                     </div>
                 </div>
             </aside>
@@ -145,7 +141,6 @@
                 </form>
             </section>
         </main>
-
         <footer>
             <nav>
                 <ul>
@@ -153,6 +148,5 @@
                 </ul>
             </nav>
         </footer>
-        
     </body>
 </html>

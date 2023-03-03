@@ -1,13 +1,15 @@
+import {  affichPhotoModal} from "./modal.mjs";
 let works;
 const getData = async () => {
     try {
-        const response = await fetch("http://localhost:5678/api/works")//(config.host + "/api/works");
+        const response = await fetch("http://localhost:5678/api/works")
         console.log(response)
         if (!response.ok) {
             throw new Error(`an error occured with status: ${response.status}`);
         }
         works = await response.json();
         afficherProject(works);
+        affichPhotoModal(works);
     } catch (error) {
         alert(error);
         //document.querySelector('.filter').innerHTML=('Impossible de télècharger les porjets essayer plus tard')
@@ -73,13 +75,15 @@ function checkIsAdmin(){
      document.querySelector('#header-black').classList.replace("hide","show-head-black");
     //boutton edit
     document.querySelector('#button-edit-photo').classList.replace("hide","show-edit-photo");
+    document.querySelector('#button-edit-text').classList.replace("hide","button-edit-text");
     document.querySelector('#button-edit-projet').classList.replace("hide","show-edit-projet");
      // Je peux afficher les boutons de la modale
-    //sectionFilter.classList.replace("filter","hide")
-    //localStorage.removeItem("token")
+    sectionFilter.classList.replace("filter","hide")
+    
   }
   }
-  
-  checkIsAdmin();
-  
-  
+  checkIsAdmin()
+  function disconnectAdmin(){
+    const token = localStorage.getItem("token");
+    localStorage.removeItem("token")
+}

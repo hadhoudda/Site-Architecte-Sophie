@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
     checkForm();
 });
 function checkForm() {
@@ -41,6 +41,7 @@ function checkForm() {
                     console.log(error);
                 });
         });
+
     //////////////fonction message d'erreur
     function errorMessage(message) {
         const errorMessage = document.querySelector("#error-message");
@@ -52,4 +53,6 @@ function checkForm() {
         }, 4000);
     }
 }
-//////////////////
+
+
+  

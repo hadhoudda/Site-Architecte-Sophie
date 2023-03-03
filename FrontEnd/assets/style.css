@@ -349,20 +349,23 @@ figcaption{
 	width:100%;
 	height: 100%;
 	background:rgba(0, 0, 0, 0.3)
+	
 }
 .modal-wrapper{
 	overflow: auto;
 	background-color: white;
 	border-radius: 10px;
-	/* width: 600px; */
+	
+	width: 731px; 
 	/* max-width: calc(100vw -20px); */
 	/*100vw une fois la taille de largeur(vw) et (vh hauteur) de l'ecran*/
 	 /* max-height: calc(100vh -20px); */
 	padding: 24px;  
-	width: 630px;
-	height:500px;
+	width: 50%;
+	max-height:500px;
+	top: 50%;
 }
-.header-modal{
+.close-modal{
 	display: flex;
 	justify-content: flex-end;
 }
@@ -388,7 +391,19 @@ height: 36px;
 left: 600px;
 top: 1267px;
 }
-.style-red{
+.modal-btn{
+	background-color: #1D6154;
+	color: white;
+	border: 1px solid #829793;
+	border-radius: 60px;
+	font-family: 'Syne';
+	font-size: 16px;
+	text-align: center;
+	cursor: pointer;
+	
+}
+
+.btn-delete-modal{
 	color: red;
 	margin: 23px;
 	
