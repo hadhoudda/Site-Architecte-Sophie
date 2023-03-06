@@ -11,7 +11,6 @@
     <meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
     <script src="app.js" type="module"></script>
-    
     </head>
     <body>
         <header>
@@ -28,7 +27,8 @@
                 <ul>
                     <li>projets</li>
                     <li>contact</li>
-                    <li><a href="login.html">login</a> </li>
+                    <li><a href="login.html" id="connect-admin" class="show" >login</a> </li>
+                    <li><a href="index.html" id="deconnect-admin" class="hide" >logout</a> </li>
                     <li>
                         <img
                             src="./assets/icons/instagram.png"
@@ -48,8 +48,7 @@
                         <p>
                             <a href ="#">
                             <i class="fa-solid fa-pen-to-square"></i>
-                            </a>
-                             modifier
+                             modifier</a>
                         </p>
                     </div>
                 </figure>
@@ -59,12 +58,11 @@
                     <p>
                         <a href ="#">
                         <i class="fa-solid fa-pen-to-square"></i>
-                        </a>
-                        modifier
+                        modifier</a>
                     </p>
                 </div>
                     <h2>Designer d'espace</h2>
-                    <p>
+                    <p> 
                         Je raconte votre histoire, je valorise vos idées. Je
                         vous accompagne de la conception à la livraison finale
                         du chantier.
@@ -90,38 +88,74 @@
                     <div id="button-edit-projet" class="hide">
                         <p>
                             <a href="#modal1" class="js-modal">
-                            <i class="fa-solid fa-pen-to-square"></i></a>
-                            modifier
-                        </p>
-                    </div>
-                </div>
-                <div class="filter ">
-					<!-- code en js -->
-				</div>
-                <div class="gallery">
-                    <!-- Récupération des photos depuis l'API-->
-                </div>
-            </section>
-            <!-- ========section modal=============== -->
-            <aside id="modal1" class="hide" aria-hidden="true" role="dialog" aria-labelledby="title-modal">
-                <div class="modal-wrapper">
-                    <div class="close-modal" >
-                       <a href="index.html"> <i class="fa-solid fa-xmark "></i></a>
-                    </div>
-                    <div class="body-modal">
-                        <h3 class="title-modal">Galerie photo</h3>
-                        <div class="galeri-modal">
-
-                                <!-- tire______________ -->
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            modifier</a>
+                              <!-- ========section modal1 =============== -->
+            <aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="title-modal"
+             style="display: none;">
+                <!-- aria-hidden="true" c'est à dire par defaut cache -->
+                <div class="modal-wrapper"  style="display: null">
+                    <div class="container-modal" id="container-modal">
+                        <div class="close-modal" >
+                         <a href="index.html"> <i class="fa-solid fa-xmark "></i></a>
+                        </div>
+                        <div class="body-modal">
+                            <h3 class="title-modal style-title">Galerie photo</h3>
+                            <div class="galeri-modal">
+                                <!-- code en js modal.mjs-->
+                            </div>
+                        </div>
+                        <div class="footer-modal">
+                        <button class="btn-ad-photo-moda"> Ajoute une photo</button> 
+                        <a href="#" class="btn-delete-modal">Supprimer la galerie</a>
                         </div>
                     </div>
-                    <div class="footer-modal">
-                        <button class=" modal-btn">Ajoute une photo</button>
-                        <a href="#" class="btn-delete-modal">Supprimer la galerie</a>
+                       <!-- *********** affichage modal ajoute photo ************* -->
+                    <div class="container-ad-photo-modal" style="display: none;">
+                     
+                        <div class="close-add-modal" >
+                            <a href="#container-modal"><i class="fa-solid fa-arrow-left"></i></a>
+                            <a href="index.html"> <i class="fa-solid fa-xmark " ></i></a>
+                        </div>
+                        
+                        <div class="ad-photo-modal">
+                            <h3 class="style-title"  >Ajoute photo</h3>
+                            <div class="add-photo">
+                                
+                                <i class="fa-solid fa-image icone-add-photo " ></i>
+                                <button type="file" class="btn-add-photo" > + Ajoute photo </button>
+                                <p class="text-add-phot">jpg, png : 4mo max</p>
+                                
+                           </div>
+                        </div>
+                        <div class="form-add-photo">
+                           <label for="name">Titre</label>
+                                <input class="style-input-add-photo " type="text" name="name" id="name" />
+                                <label for="name">Titre</label>
+                                <input class="style-input-add-photo" type="text" name="name" id="name" />
+                            </div>
                     </div>
                 </div>
             </aside>
-           <!--============fin section modal===========--> 
+           <!--============fin section modal1 ===========--> 
+                        </p>
+                    </div>
+                </div>
+                            <!-- ========section modal2 =============== -->
+          
+                <!-- ========fin section modal2 =============== -->
+                <div class="filter ">
+					<!-- code en js app.js-->
+                    <div class="imageapi">
+                        
+
+                    </div>
+				</div>
+                <div class="gallery">
+                    <div class="button-delet" ><i class="fa-duotone fa-trash-can-xmark"></i></div>
+                    <!-- Récupération des photos depuis l'API code en app.js-->
+                </div>
+            </section>
             <section id="contact">
                 <h2>Contact</h2>
                 <p>Vous avez un projet ? Discutons-en !</p>

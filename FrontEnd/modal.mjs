@@ -1,41 +1,63 @@
-
+export {affichModal}
+const modal = document.querySelector("#modal1")
     //////open modal///////////
+
+     //////open modal///////////
+   
     const openModal= function(e){
         e.preventDefault();
-         const modal = document.querySelector("#modal1")
-         modal.classList.replace("hide", "modal");
-         //return affichPhotoModal() 
-     }
+        modal.style.display = null;
+        modal.removeAttribute('aria-hidden')
+        modal.setAttribute('aria-modal','true')
+    }
      ///////////close modal//////////
      const closeModal = function(e){
          e.preventDefault();
-         const modal = document.querySelector("#modal1")
-         modal.classList.replace("modal", "hide");
-      }   
+         if(modal=== null) return
+         modal.style.display = "none";
+         modal.setAttribute('aria-hidden')
+         modal.removeAttribute('aria-modal')
+        //  modal.removeEventListener('click',closeModal)
+        }
       window.addEventListener('keydown', function(e){
          if((e.key === "Escape")||(e.key === "Esc")){
              closeModal(e)
          }
       })
-     ////////////////////ecoute boutton//////////
-     document.querySelector(".close-modal").addEventListener('click', closeModal);
-     document.querySelector('.js-modal').addEventListener('click', openModal);
+      ///////arrete la propogation de la modal////////
+      const stopPropagation = function(e){
+        e.stopPropagation()
+      }
+     ////////////////////ecoute boutton modal//////////
+    document.querySelectorAll('.js-modal').forEach(a =>{
+        a.addEventListener('click',openModal)
+    })
      //////////affichage photo au modal///////////////
-    export function affichPhotoModal (works){
-         document.querySelector(".galeri-modal").innerHTML = null;
-         for (let elem in works) {
-             const articleModal = works[elem];
-             const sectionGallery = document.querySelector(".galeri-modal");
-             const worksElement = document.createElement("articleModal");
-             const titleElement = document.createElement("h4");
-             titleElement.innerText = articleModal.title;
-             const imageElement = document.createElement("img");
-             imageElement.src = articleModal.imageUrl;
-             sectionGallery.appendChild(worksElement);
-             worksElement.appendChild(imageElement);
-             worksElement.appendChild(titleElement);
-         }
-         console.log(works)
-     }
-   
-     
+     function affichModal (works){
+        document.querySelector(".galeri-modal").innerHTML = null;
+        for (let elem in works) {
+            
+            const sectionGallery = document.querySelector(".galeri-modal");
+            const worksElement = document.createElement("figure");
+            const imageElement = document.createElement("img");
+            imageElement.src = works[elem].imageUrl
+            const titleElement = document.createElement("figcaption");
+            titleElement.innerText = works[elem].title;
+            sectionGallery.appendChild(worksElement);
+            ///ajoute le boutton de supprime////
+            worksElement.innerHTML = ` <div class= "icone-photo-modal">
+            <button class="btn-move"><i class="fa-solid fa-up-down-left-right" style="color: black;"></i></button>
+            <button type="button" class="btn-delet"><i class="fa-solid fa-trash-can" style="color: black;"></i></button></div>`
+            worksElement.appendChild(imageElement);
+            worksElement.appendChild(titleElement);
+        }
+        console.log(works)
+    //     document.querySelector(".close-modal").addEventListener('click', closeModal);
+    //     document.querySelector('.js-modal').addEventListener('click', openModal);
+    // 
+ }
+ ///////ecoute boutton ouvrir modal ajoujte photo /////////
+ document.querySelector(".btn-ad-photo-moda").addEventListener('click',function(){
+    document.querySelector(".container-modal").style.display="none";
+    document.querySelector(".container-ad-photo-modal").style.display = null;
+ });

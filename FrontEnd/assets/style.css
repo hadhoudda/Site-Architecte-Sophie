@@ -188,7 +188,7 @@ footer nav ul {
 /* ==================================== */
 
 /*======= section gallery =======*/
-h3{
+figcaption{
 	padding-top: 10px;
 }
 .filter{
@@ -205,7 +205,7 @@ h3{
 	text-align: center;
 	cursor: pointer;
 }
-button:focus{
+button:focus .style-button{
 	background-color: #1D6154;
 	color: white;
 }
@@ -337,47 +337,61 @@ figcaption{
 .hide{
 	display:none;
 }
-/********** css de modal***************/
-.modal{
-	position:fixed;
-	/*pour centre le modal*/
+.show{
 	display: flex;
-	align-items: center;
-	justify-content: center;
+}
+/********** css de modal 1 ***************/
+.modal{
+	/* z-index: 2; */
+	position:fixed;
 	top: 0;
 	left: 0;
 	width:100%;
 	height: 100%;
-	background:rgba(0, 0, 0, 0.3)
+	background:rgba(0, 0, 0, 0.3);
+	/*pour centre le modal*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* animation: fadeIn .3s both; */
 	
 }
 .modal-wrapper{
+		/* position: relative;
+		border-radius: 10px;
+		overflow: auto;
+		width: 600px;
+		
+		max-width: calc(100vh - 20px);
+		max-height: calc(100vh -40px);
+		padding: 24px;
+		background: #FFFf; */
+		/* animation: slideFromTop .5s both; */
+	
 	overflow: auto;
 	background-color: white;
+	width: 70%;
+	padding: 24px;
 	border-radius: 10px;
-	
-	width: 731px; 
+	max-height:500px;
+	top: 50%;
 	/* max-width: calc(100vw -20px); */
 	/*100vw une fois la taille de largeur(vw) et (vh hauteur) de l'ecran*/
 	 /* max-height: calc(100vh -20px); */
-	padding: 24px;  
-	width: 50%;
-	max-height:500px;
-	top: 50%;
-}
+
+}	
 .close-modal{
 	display: flex;
 	justify-content: flex-end;
 }
-.title-modal{
+.style-title{
 	font-family: 'Work Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 26px;
-line-height: 30px;
-text-align: center;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 26px;
+	line-height: 30px;
+	text-align: center;
 }
-
 .footer-modal{
 	display: flex;
 	flex-direction: column;
@@ -385,13 +399,13 @@ text-align: center;
 	padding-top: 38px;
 	
 }
-.modal-btn{
-width: 237px;
-height: 36px;
-left: 600px;
-top: 1267px;
+.btn-ad-photo-moda{
+	width: 237px;
+	height: 36px;
+	left: 600px;
+	top: 1267px;
 }
-.modal-btn{
+.btn-ad-photo-moda{
 	background-color: #1D6154;
 	color: white;
 	border: 1px solid #829793;
@@ -400,11 +414,100 @@ top: 1267px;
 	font-size: 16px;
 	text-align: center;
 	cursor: pointer;
-	
 }
-
 .btn-delete-modal{
 	color: red;
 	margin: 23px;
-	
 }
+.galeri-modal {
+	padding-top: 20px;
+	width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 3px;
+    grid-row-gap: 6px;
+}
+.galeri-modal img{
+	width: 85%;
+}
+.index{
+	z-index: auto;
+}
+/*======css modal ajoute photo =========*/
+.close-modal-add{
+	display: flex;
+	justify-content:space-between;
+}
+.ad-photo-modal{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.add-photo{
+	width: 70%;
+	height: 169px;
+	left: 510px;
+	top: 786px;
+	background: #E8F1F7;
+	border-radius: 3px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 25px;
+	margin: 30px;
+}
+/* .style-icone-add-photo{
+	color: rgb(157, 198, 245); 
+} */
+.btn-add-photo{
+	border: 1px solid #306685;
+	border-radius: 50px;
+	font-family: 'Syne';
+	font-size: 16px;
+	text-align: center;
+	color : #306685;
+	width: 173px;
+	height: 36px;
+}
+.text-add-phot{
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 12px;
+	color: #444444;
+}
+.form-add-photo{
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 10px;
+	padding: 20px;
+	margin: 30px;
+}
+.style-input-add-photo{
+	width: 420px;
+height: 51px;
+left: 510px;
+top: 1011px;
+border: 1px solid #FFFFFF;
+background: #FFFFFF;
+box-shadow: 0px 4px 14px  rgba(121, 107, 107, 0.09);
+}
+.icone-add-photo{
+	color: rgb(157, 198, 245);
+	font-size: 100px;
+}
+
+
+.icone-photo-modal{
+	position: absolute;
+	width: auto;
+	right: 25px;
+	top: 2px;
+}
+.galeri-modal figure{
+	position: relative;
+	
+ }

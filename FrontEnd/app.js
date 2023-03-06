@@ -1,5 +1,6 @@
-import {  affichPhotoModal} from "./modal.mjs";
-let works;
+import {  affichModal} from "./modal.mjs";
+var works;
+const token = localStorage.getItem("token");
 const getData = async () => {
     try {
         const response = await fetch("http://localhost:5678/api/works")
@@ -9,7 +10,7 @@ const getData = async () => {
         }
         works = await response.json();
         afficherProject(works);
-        affichPhotoModal(works);
+        affichModal(works);
     } catch (error) {
         alert(error);
         //document.querySelector('.filter').innerHTML=('Impossible de télècharger les porjets essayer plus tard')
@@ -46,13 +47,25 @@ buttonCategory3.addEventListener("click", function () {
 const afficherProject = (works) => {
     document.querySelector(".gallery").innerHTML = null;
     for (let elem in works) {
-        const article = works[elem];
+        // for (let i = 0; i < data.length; i++) {
+        //     const figure = document.createElement("figure");
+        //     const imageElement = document.createElement("img");
+        //     imageElement.setAttribute("crossorigin", "anonymous");
+        //     imageElement.setAttribute("src", data[i].imageUrl);
+        //     imageElement.setAttribute("alt", data[i].title);
+        //     const titreElement = document.createElement("figcaption");
+        //     titreElement.innerText = data[i].title;
+        //     figure.appendChild(imageElement);
+        //     figure.appendChild(titreElement);
+        //     gallery.appendChild(figure)
+        // }
         const sectionGallery = document.querySelector(".gallery");
-        const worksElement = document.createElement("article");
-        const titleElement = document.createElement("h3");
-        titleElement.innerText = article.title;
+        const worksElement = document.createElement("figure");
         const imageElement = document.createElement("img");
-        imageElement.src = article.imageUrl;
+        imageElement.src = works[elem].imageUrl
+        const titleElement = document.createElement("figcaption");
+        titleElement.innerText = works[elem].title;
+        
         sectionGallery.appendChild(worksElement);
         worksElement.appendChild(imageElement);
         worksElement.appendChild(titleElement);
@@ -68,7 +81,7 @@ const filtreProjects = (work, filterName) => {
 }
 
 function checkIsAdmin(){
-    const token = localStorage.getItem("token");
+    
   if(token !== null){
      //affichage modification page admin
      //partie haute noir
@@ -79,11 +92,15 @@ function checkIsAdmin(){
     document.querySelector('#button-edit-projet').classList.replace("hide","show-edit-projet");
      // Je peux afficher les boutons de la modale
     sectionFilter.classList.replace("filter","hide")
-    
+    document.querySelector('#connect-admin').classList.replace("show", "hide")
+    document.querySelector('#deconnect-admin').classList.replace("hide", "show");
   }
   }
   checkIsAdmin()
-  function disconnectAdmin(){
-    const token = localStorage.getItem("token");
+////// deconnexion ////////////
+document.querySelector('#deconnect-admin').addEventListener('click', function(){
     localStorage.removeItem("token")
-}
+    document.querySelector('#connect-admin').classList.replace("hide", "show")
+    document.querySelector('#deconnect-admin').classList.replace("show", "hide");
+})
+
