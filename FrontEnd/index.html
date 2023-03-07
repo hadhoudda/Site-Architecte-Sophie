@@ -114,27 +114,42 @@
                     <div class="container-ad-photo-modal" style="display: none;">
                      
                         <div class="close-add-modal" >
-                            <a href="#container-modal"><i class="fa-solid fa-arrow-left"></i></a>
+                            <a href="#container-modal" id="icone-return"><i class="fa-solid fa-arrow-left"></i></a>
+                            <!-- <button id="icone-return"><i class="fa-solid fa-xmark " ></i></button> -->
                             <a href="index.html"> <i class="fa-solid fa-xmark " ></i></a>
+                        
                         </div>
                         
                         <div class="ad-photo-modal">
                             <h3 class="style-title"  >Ajoute photo</h3>
                             <div class="add-photo">
-                                
+                                <!-- bouton ajoute photo -->
                                 <i class="fa-solid fa-image icone-add-photo " ></i>
-                                <button type="file" class="btn-add-photo" > + Ajoute photo </button>
+                               <div class="div-input-file">
+                                <button for="photo" class="btn-file">+ Ajoute photo</button> 
+                             <input type="file" id="input-file" > 
+                                </div>
+                            
                                 <p class="text-add-phot">jpg, png : 4mo max</p>
                                 
                            </div>
                         </div>
-                        <div class="form-add-photo">
+                        <form class="form-add-photo">
                            <label for="name">Titre</label>
-                                <input class="style-input-add-photo " type="text" name="name" id="name" />
-                                <label for="name">Titre</label>
-                                <input class="style-input-add-photo" type="text" name="name" id="name" />
-                            </div>
-                    </div>
+                                <input type="text" class="style-input-add-photo "  name="name" id="name" />
+                                
+                                <label for="pet-select">Catégorie</label>
+
+                                <select name="pets" id="pet-select" class="style-input-add-photo" >
+                                    <option value=""></option>
+                                
+                                    <option value="objets">Objets</option>
+                                    <option value="appartements">Appartements</option>
+                                    <option value="hotels-restaurants">Hotels & restaurants</option>
+                                
+                                </select>
+                                <button for="valide" class="btn-valid">Valider</button> 
+                        </form>
                 </div>
             </aside>
            <!--============fin section modal1 ===========--> 

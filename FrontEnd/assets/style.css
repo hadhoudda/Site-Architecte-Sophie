@@ -188,27 +188,30 @@ footer nav ul {
 /* ==================================== */
 
 /*======= section gallery =======*/
-figcaption{
+/* h3{
 	padding-top: 10px;
-}
+	
+} */
 .filter{
 	display: flex;
 	justify-content: center;
 	gap: 10px;
 	margin-bottom: 50px;
 }
-.style-button{
-	border: 1px solid #829793;
+.style-button-filtre{
+	color: #1D6154;
+	border: 1px solid #1D6154;
 	border-radius: 60px;
 	font-family: 'Syne';
 	font-size: 16px;
 	text-align: center;
+	padding: 6px 15px 6px 15px;
 	cursor: pointer;
 }
-button:focus .style-button{
+.style-button-filtre:focus {
 	background-color: #1D6154;
 	color: white;
-}
+} 
 /*======= Fin Section Filter ======*/
 /*======= Section connexion ======*/
 a {
@@ -434,8 +437,19 @@ figcaption{
 .index{
 	z-index: auto;
 }
+.icone-photo-modal{
+	position: absolute;
+	width: auto;
+	right: 25px;
+	top: 2px;
+}
+.galeri-modal article{
+	position: relative;
+	
+ }
 /*======css modal ajoute photo =========*/
-.close-modal-add{
+
+.close-add-modal{
 	display: flex;
 	justify-content:space-between;
 }
@@ -461,7 +475,7 @@ figcaption{
 /* .style-icone-add-photo{
 	color: rgb(157, 198, 245); 
 } */
-.btn-add-photo{
+.btn-file{
 	border: 1px solid #306685;
 	border-radius: 50px;
 	font-family: 'Syne';
@@ -470,6 +484,19 @@ figcaption{
 	color : #306685;
 	width: 173px;
 	height: 36px;
+	cursor: pointer;	
+}
+.div-input-file{
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+.div-input-file #input-file{
+	left: 0;
+  top: 0;
+  opacity: 0;
+  position: absolute;
+  font-size: 90px;
 }
 .text-add-phot{
 	font-weight: 400;
@@ -487,27 +514,33 @@ figcaption{
 	margin: 30px;
 }
 .style-input-add-photo{
-	width: 420px;
+	height: 50px;
+    font-size: 1.2em;
+    border: none;
+    box-shadow: 0px 4px 14px rgb(0 0 0 / 9%);
+	/* width: 420px;
 height: 51px;
 left: 510px;
 top: 1011px;
 border: 1px solid #FFFFFF;
 background: #FFFFFF;
-box-shadow: 0px 4px 14px  rgba(121, 107, 107, 0.09);
+box-shadow: 0px 4px 14px  rgba(121, 107, 107, 0.09); */
 }
 .icone-add-photo{
 	color: rgb(157, 198, 245);
 	font-size: 100px;
 }
+.btn-valid{
+	border: 1px solid #A7A7A7;
+	border-radius: 50px;
+	font-family: 'Syne';
+	font-size: 16px;
+	text-align: center;
+	background-color:#A7A7A7;
+	color :	white;
+	width: 173px;
+	height: 36px;
+	cursor: pointer;	
 
-
-.icone-photo-modal{
-	position: absolute;
-	width: auto;
-	right: 25px;
-	top: 2px;
 }
-.galeri-modal figure{
-	position: relative;
-	
- }
+

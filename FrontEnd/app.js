@@ -21,10 +21,10 @@ getData();
 //ajouter les bouttons de filtre
 const sectionFilter = document.querySelector(".filter");
 sectionFilter.innerHTML =
-    '<button id="button-all-works" class="style-button" type= "button"> Tous</button>' +
-    '<button id="button-object" class="style-button"> Objets</button>' +
-    '<button id="button-apartment" class="style-button"> Appartements</button>' +
-    '<button id="button-hotel" class="style-button"> Hôtels & restaurants</button>';
+    '<button id="button-all-works" class="style-button-filtre" type= "button"> Tous</button>' +
+    '<button id="button-object" class="style-button-filtre"> Objets</button>' +
+    '<button id="button-apartment" class="style-button-filtre"> Appartements</button>' +
+    '<button id="button-hotel" class="style-button-filtre"> Hôtels & restaurants</button>';
 const buttonAllCategory = document.getElementById("button-all-works");
 const buttonCategory1 = document.querySelector("#button-object");
 const buttonCategory2 = document.querySelector("#button-apartment");
@@ -48,22 +48,22 @@ const afficherProject = (works) => {
     document.querySelector(".gallery").innerHTML = null;
     for (let elem in works) {
         // for (let i = 0; i < data.length; i++) {
-        //     const figure = document.createElement("figure");
+        //     const article = document.createElement("article");
         //     const imageElement = document.createElement("img");
         //     imageElement.setAttribute("crossorigin", "anonymous");
         //     imageElement.setAttribute("src", data[i].imageUrl);
         //     imageElement.setAttribute("alt", data[i].title);
         //     const titreElement = document.createElement("figcaption");
         //     titreElement.innerText = data[i].title;
-        //     figure.appendChild(imageElement);
-        //     figure.appendChild(titreElement);
-        //     gallery.appendChild(figure)
+        //     article.appendChild(imageElement);
+        //     article.appendChild(titreElement);
+        //     gallery.appendChild(article)
         // }
         const sectionGallery = document.querySelector(".gallery");
-        const worksElement = document.createElement("figure");
+        const worksElement = document.createElement("article");
         const imageElement = document.createElement("img");
         imageElement.src = works[elem].imageUrl
-        const titleElement = document.createElement("figcaption");
+        const titleElement = document.createElement("h3");
         titleElement.innerText = works[elem].title;
         
         sectionGallery.appendChild(worksElement);

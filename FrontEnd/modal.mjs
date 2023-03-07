@@ -28,21 +28,29 @@ const modal = document.querySelector("#modal1")
       const stopPropagation = function(e){
         e.stopPropagation()
       }
-     ////////////////////ecoute boutton modal//////////
+     ////////////////////ecoute boutton open modal//////////
     document.querySelectorAll('.js-modal').forEach(a =>{
         a.addEventListener('click',openModal)
     })
+    ////////// ecoute boutton return ////////////
+   // document.getElementById('icone-return').addEventListener('click',rtn())
+  
+  ////// fonction return modal ///////////
+  //   function rtn() {
+  //     window.history.back();
+  //  }
      //////////affichage photo au modal///////////////
      function affichModal (works){
         document.querySelector(".galeri-modal").innerHTML = null;
         for (let elem in works) {
             
             const sectionGallery = document.querySelector(".galeri-modal");
-            const worksElement = document.createElement("figure");
+            const worksElement = document.createElement("article");
             const imageElement = document.createElement("img");
             imageElement.src = works[elem].imageUrl
-            const titleElement = document.createElement("figcaption");
-            titleElement.innerText = works[elem].title;
+            const titleElement = document.createElement("span");
+            //titleElement.innerText = works[elem].title;
+            titleElement.innerText =`éditer`
             sectionGallery.appendChild(worksElement);
             ///ajoute le boutton de supprime////
             worksElement.innerHTML = ` <div class= "icone-photo-modal">
@@ -61,3 +69,12 @@ const modal = document.querySelector("#modal1")
     document.querySelector(".container-modal").style.display="none";
     document.querySelector(".container-ad-photo-modal").style.display = null;
  });
+  ///////////////////  fonction ajout photo ///////////////
+  function adPhoto(){
+console.log('rr')
+  }
+
+  //////////ecout boutton ajouter photo ///////
+  document.querySelector("#input-file").addEventListener('click', function(){
+    console.log('rrmm')
+  })
