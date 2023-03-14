@@ -1,4 +1,4 @@
-import {  affichModal} from "./modal.mjs";
+//import {  affichModal} from "./modal.js";
 var works;
 const token = localStorage.getItem("token");
 const getData = async () => {
@@ -6,7 +6,7 @@ const getData = async () => {
         const response = await fetch("http://localhost:5678/api/works")
         console.log(response)
         if (!response.ok) {
-            throw new Error(`an error occured with status: ${response.status}`);
+            throw new Errr(`an error occured with status: ${response.status}`);
         }
         works = await response.json();
         afficherProject(works);
@@ -47,31 +47,18 @@ buttonCategory3.addEventListener("click", function () {
 const afficherProject = (works) => {
     document.querySelector(".gallery").innerHTML = null;
     for (let elem in works) {
-        // for (let i = 0; i < data.length; i++) {
-        //     const article = document.createElement("article");
-        //     const imageElement = document.createElement("img");
-        //     imageElement.setAttribute("crossorigin", "anonymous");
-        //     imageElement.setAttribute("src", data[i].imageUrl);
-        //     imageElement.setAttribute("alt", data[i].title);
-        //     const titreElement = document.createElement("figcaption");
-        //     titreElement.innerText = data[i].title;
-        //     article.appendChild(imageElement);
-        //     article.appendChild(titreElement);
-        //     gallery.appendChild(article)
-        // }
         const sectionGallery = document.querySelector(".gallery");
         const worksElement = document.createElement("article");
         const imageElement = document.createElement("img");
         imageElement.src = works[elem].imageUrl
         const titleElement = document.createElement("h3");
         titleElement.innerText = works[elem].title;
-        
         sectionGallery.appendChild(worksElement);
         worksElement.appendChild(imageElement);
         worksElement.appendChild(titleElement);
     }
 };
-//fonction de filtre des projets
+//fonction filtre des projets
 const filtreProjects = (work, filterName) => {
     return works.filter((work) => {
         if (work?.category?.name === filterName) {

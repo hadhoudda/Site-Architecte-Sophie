@@ -1,3 +1,4 @@
+ // export { errorMessage };
   document.addEventListener("DOMContentLoaded", () => {
     checkForm();
 });

@@ -10,17 +10,14 @@
 	<script src="https://kit.fontawesome.com/32fe4a8f5c.js" crossorigin="anonymous"></script>
     <meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
-    <script src="app.js" type="module"></script>
+    <script src="app.js" type="module" defer></script>
     </head>
     <body>
         <header>
-            <div id ="header-black" class="hide ">
-                     <p class="text-edit">
-                    <a href="#"><i class="fa-solid fa-pen-to-square style-white "></i></a>
-                     Mode édition
+            <div id ="header-black" class="hide " >
+                    <a href="#"class="text-edit"><i class="fa-solid fa-pen-to-square style-white "></i>Mode édition</a>
                     <button class="style-btn-publier">publier les changements</button>
-                </p>
-        </div>
+            </div>
             <div class="header">
             <h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
             <nav>
@@ -30,10 +27,7 @@
                     <li><a href="login.html" id="connect-admin" class="show" >login</a> </li>
                     <li><a href="index.html" id="deconnect-admin" class="hide" >logout</a> </li>
                     <li>
-                        <img
-                            src="./assets/icons/instagram.png"
-                            alt="Instagram"
-                        />
+                        <img src="./assets/icons/instagram.png" alt="Instagram"/>
                     </li>
                 </ul>
             </nav>
@@ -86,11 +80,11 @@
                     <h2>Mes Projets</h2>
                     <!--********* boutton de modification projet ***********-->
                     <div id="button-edit-projet" class="hide">
-                        <p>
-                            <a href="#modal1" class="js-modal">
+                        <!-- <p> -->
+                            <a href="#modal1" class="js-modal" >
                             <i class="fa-solid fa-pen-to-square"></i>
                             modifier</a>
-                              <!-- ========section modal1 =============== -->
+            <!-- ========section modal1 =============== -->
             <aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="title-modal"
              style="display: none;">
                 <!-- aria-hidden="true" c'est à dire par defaut cache -->
@@ -110,45 +104,42 @@
                         <a href="#" class="btn-delete-modal">Supprimer la galerie</a>
                         </div>
                     </div>
-                       <!-- *********** affichage modal ajoute photo ************* -->
+                       <!-- *********** affichage modal avec opition ajouter photo ************* -->
                     <div class="container-ad-photo-modal" style="display: none;">
-                     
                         <div class="close-add-modal" >
-                            <a href="#container-modal" id="icone-return"><i class="fa-solid fa-arrow-left"></i></a>
-                            <!-- <button id="icone-return"><i class="fa-solid fa-xmark " ></i></button> -->
+                            <!-- <a href="#modal1" id="icone-return"><i class="fa-solid fa-arrow-left"></i></a> -->
+                            <i class="fa-solid fa-arrow-left" id="icone-return" ></i>
                             <a href="index.html"> <i class="fa-solid fa-xmark " ></i></a>
-                        
                         </div>
-                        
                         <div class="ad-photo-modal">
                             <h3 class="style-title"  >Ajoute photo</h3>
-                            <div class="add-photo">
-                                <!-- bouton ajoute photo -->
+                            <div class="add-photo" >
+                                <div class="container-photo" style="display: null;">
+                                <!-- bouton ajoute photo --> 
                                 <i class="fa-solid fa-image icone-add-photo " ></i>
-                               <div class="div-input-file">
-                                <button for="photo" class="btn-file">+ Ajoute photo</button> 
-                             <input type="file" id="input-file" > 
-                                </div>
+                                <div class="div-input-file">
+                                <button for="file" class="btn-file" >+ Ajoute photo</button> 
+                                <input type="file" name="file" id="file" > 
+                            </div>
+                                
                             
                                 <p class="text-add-phot">jpg, png : 4mo max</p>
-                                
+                            </div>
                            </div>
                         </div>
                         <form class="form-add-photo">
+                            <div id="form-add-photo">
                            <label for="name">Titre</label>
-                                <input type="text" class="style-input-add-photo "  name="name" id="name" />
-                                
-                                <label for="pet-select">Catégorie</label>
+                                <input type="text"  class="style-input-add-photo "  name="name" id="name" />
+                                <label for="category">Catégorie</label>
 
-                                <select name="pets" id="pet-select" class="style-input-add-photo" >
+                                <select name="category" id="category" class="style-input-add-photo" >
                                     <option value=""></option>
-                                
                                     <option value="objets">Objets</option>
                                     <option value="appartements">Appartements</option>
                                     <option value="hotels-restaurants">Hotels & restaurants</option>
-                                
-                                </select>
-                                <button for="valide" class="btn-valid">Valider</button> 
+                                </select></div>
+                                <button for="valide" class="btn-valid" id="send-picture">Valider</button> 
                         </form>
                 </div>
             </aside>
@@ -156,14 +147,11 @@
                         </p>
                     </div>
                 </div>
-                            <!-- ========section modal2 =============== -->
-          
+            <!-- ========section modal2 =============== -->
                 <!-- ========fin section modal2 =============== -->
                 <div class="filter ">
 					<!-- code en js app.js-->
                     <div class="imageapi">
-                        
-
                     </div>
 				</div>
                 <div class="gallery">
@@ -197,5 +185,6 @@
                 </ul>
             </nav>
         </footer>
+        <script src="modal.js"></script>
     </body>
 </html>

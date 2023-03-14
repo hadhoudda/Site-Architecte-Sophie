@@ -188,10 +188,9 @@ footer nav ul {
 /* ==================================== */
 
 /*======= section gallery =======*/
-/* h3{
-	padding-top: 10px;
-	
-} */
+img{
+	object-fit: cover;
+}
 .filter{
 	display: flex;
 	justify-content: center;
@@ -224,9 +223,12 @@ a {
 	gap: 30px;
 	
 }
+#header-black,
 .text-edit{
-	padding-top: 10px;
+	padding: 10px 5px 0 0;
+
 }
+
 figcaption{
 	padding: 15px 0 0 60px;
 	
@@ -388,12 +390,14 @@ figcaption{
 	justify-content: flex-end;
 }
 .style-title{
+
 	font-family: 'Work Sans';
 	font-style: normal;
 	font-weight: 400;
 	font-size: 26px;
 	line-height: 30px;
 	text-align: center;
+	margin-bottom: 20px;
 }
 .footer-modal{
 	display: flex;
@@ -438,10 +442,19 @@ figcaption{
 	z-index: auto;
 }
 .icone-photo-modal{
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 2px;
 	position: absolute;
+	
 	width: auto;
-	right: 25px;
-	top: 2px;
+	right: 15%;
+	top: 4px;
+}
+.icone-photo-modal button{
+	font-size: 80%;
+	background: black;
+	padding: 0 2px 0 2px;
 }
 .galeri-modal article{
 	position: relative;
@@ -452,6 +465,9 @@ figcaption{
 .close-add-modal{
 	display: flex;
 	justify-content:space-between;
+}
+#icone-return{
+	cursor: pointer;	
 }
 .ad-photo-modal{
 	display: flex;
@@ -465,12 +481,15 @@ figcaption{
 	top: 786px;
 	background: #E8F1F7;
 	border-radius: 3px;
+	
+	padding: 25px;
+	margin: 30px;
+}
+.container-photo{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-evenly;
-	padding: 25px;
-	margin: 30px;
+	/* justify-content: space-evenly; */
 }
 /* .style-icone-add-photo{
 	color: rgb(157, 198, 245); 
@@ -491,12 +510,13 @@ figcaption{
 	position: relative;
 	overflow: hidden;
 }
-.div-input-file #input-file{
+.div-input-file #file{
 	left: 0;
   top: 0;
   opacity: 0;
   position: absolute;
   font-size: 90px;
+  
 }
 .text-add-phot{
 	font-weight: 400;
@@ -505,26 +525,25 @@ figcaption{
 	color: #444444;
 }
 .form-add-photo{
-	width: 70%;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	gap: 10px;
-	padding: 20px;
-	margin: 30px;
+	margin: 20px 0 20px 0;
 }
 .style-input-add-photo{
 	height: 50px;
     font-size: 1.2em;
     border: none;
     box-shadow: 0px 4px 14px rgb(0 0 0 / 9%);
-	/* width: 420px;
-height: 51px;
-left: 510px;
-top: 1011px;
-border: 1px solid #FFFFFF;
+    margin: 20px 0 20px 0;
+   
+
+
+/* border: 1px solid #FFFFFF;
 background: #FFFFFF;
-box-shadow: 0px 4px 14px  rgba(121, 107, 107, 0.09); */
+box-shadow: 0px 4px 14px  rgba(121, 107, 107, 0.09); */ 
 }
 .icone-add-photo{
 	color: rgb(157, 198, 245);
@@ -542,5 +561,35 @@ box-shadow: 0px 4px 14px  rgba(121, 107, 107, 0.09); */
 	height: 36px;
 	cursor: pointer;	
 
+}
+.form-add-photo{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	gap: 30px;
+}
+#form-add-photo{
+	text-align: left;
+	margin-top:30px;
+	display: flex;
+	flex-direction: column;
+}
+#form-add-photo input select{
+	padding: 20px 0 20px 0;
+}
+/*********css photo ajoute **********/
+.add-photo img{
+	width: 60%;
+	height: 100%;
+	align-items: center;
+	
+}
+.add-photo{
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	margin: 0;
+	padding: 0;
 }
 
