@@ -26,9 +26,7 @@
                     <li>contact</li>
                     <li><a href="login.html" id="connect-admin" class="show" >login</a> </li>
                     <li><a href="index.html" id="deconnect-admin" class="hide" >logout</a> </li>
-                    <li>
-                        <img src="./assets/icons/instagram.png" alt="Instagram"/>
-                    </li>
+                    <li><img src="./assets/icons/instagram.png" alt="Instagram"/></li>
                 </ul>
             </nav>
         </div>
@@ -81,83 +79,76 @@
                     <!--********* boutton de modification projet ***********-->
                     <div id="button-edit-projet" class="hide">
                         <!-- <p> -->
-                            <a href="#modal1" class="js-modal" >
-                            <i class="fa-solid fa-pen-to-square"></i>
-                            modifier</a>
-            <!-- ========section modal1 =============== -->
-            <aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="title-modal"
-             style="display: none;">
-                <!-- aria-hidden="true" c'est à dire par defaut cache -->
-                <div class="modal-wrapper"  style="display: null">
-                    <div class="container-modal" id="container-modal">
-                        <div class="close-modal" >
-                         <a href="index.html"> <i class="fa-solid fa-xmark "></i></a>
-                        </div>
-                        <div class="body-modal">
-                            <h3 class="title-modal style-title">Galerie photo</h3>
-                            <div class="galeri-modal">
-                                <!-- code en js modal.mjs-->
-                            </div>
-                        </div>
-                        <div class="footer-modal">
-                        <button class="btn-ad-photo-moda"> Ajoute une photo</button> 
-                        <a href="#" class="btn-delete-modal">Supprimer la galerie</a>
-                        </div>
-                    </div>
-                       <!-- *********** affichage modal avec opition ajouter photo ************* -->
-                    <div class="container-ad-photo-modal" style="display: none;">
-                        <div class="close-add-modal" >
-                            <!-- <a href="#modal1" id="icone-return"><i class="fa-solid fa-arrow-left"></i></a> -->
-                            <i class="fa-solid fa-arrow-left" id="icone-return" ></i>
-                            <a href="index.html"> <i class="fa-solid fa-xmark " ></i></a>
-                        </div>
-                        <div class="ad-photo-modal">
-                            <h3 class="style-title"  >Ajoute photo</h3>
-                            <div class="add-photo" >
-                                <div class="container-photo" style="display: null;">
-                                <!-- bouton ajoute photo --> 
-                                <i class="fa-solid fa-image icone-add-photo " ></i>
-                                <div class="div-input-file">
-                                <button for="file" class="btn-file" >+ Ajoute photo</button> 
-                                <input type="file" name="file" id="file" > 
-                            </div>
-                                
-                            
-                                <p class="text-add-phot">jpg, png : 4mo max</p>
-                            </div>
-                           </div>
-                        </div>
-                        <form class="form-add-photo">
-                            <div id="form-add-photo">
-                           <label for="name">Titre</label>
-                                <input type="text"  class="style-input-add-photo "  name="name" id="name" />
-                                <label for="category">Catégorie</label>
-
-                                <select name="category" id="category" class="style-input-add-photo" >
-                                    <option value=""></option>
-                                    <option value="objets">Objets</option>
-                                    <option value="appartements">Appartements</option>
-                                    <option value="hotels-restaurants">Hotels & restaurants</option>
-                                </select></div>
-                                <button for="valide" class="btn-valid" id="send-picture">Valider</button> 
-                        </form>
-                </div>
-            </aside>
-           <!--============fin section modal1 ===========--> 
-                        </p>
+                        <a href="#modal1" class="js-modal" >
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        modifier</a>
+                        <!-- ========section modal1 =============== -->
+                        <aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="title-modal"style="display: none;">
+                            <!-- aria-hidden="true" c'est à dire par defaut cache -->
+                            <div class="modal-wrapper"  style="display: null">
+                                <div class="container-modal" id="container-modal">
+                                    <div class="close-modal" >
+                                    <a href="index.html"> <i class="fa-solid fa-xmark "></i></a>
+                                    </div>
+                                    <div class="body-modal">
+                                        <h3 class="title-modal style-title">Galerie photo</h3>
+                                        <div class="galeri-modal">
+                                            <!-- code en js modal.mjs-->
+                                        </div>
+                                    </div>
+                                    <div class="footer-modal">
+                                    <button class="btn-ad-photo-moda"> Ajoute une photo</button> 
+                                    <a href="#" class="btn-delete-modal">Supprimer la galerie</a>
+                                    </div>
+                                </div>
+                                <!-- *********** affichage modal avec opition ajouter photo ************* -->
+                                <div class="container-ad-photo-modal" style="display: none;">
+                                    <div class="close-add-modal" >
+                                        <!-- <a href="#modal1" id="icone-return"><i class="fa-solid fa-arrow-left"></i></a> -->
+                                        <i class="fa-solid fa-arrow-left" id="icone-return" ></i>
+                                        <a href="index.html"> <i class="fa-solid fa-xmark " ></i></a>
+                                    </div>
+                                    <div class="ad-photo-modal">
+                                        <h3 class="style-title"  >Ajoute photo</h3>
+                                        <div class="add-photo" >
+                                            <div class="container-photo" style="display: null;">
+                                            <!-- bouton ajoute photo --> 
+                                            <i class="fa-solid fa-image icone-add-photo " ></i>
+                                            <div class="div-input-file">
+                                            <button for="file" class="btn-file" >+ Ajoute photo</button> 
+                                            <input type="file" name="file" id="file" > 
+                                        </div>
+                                            <p class="text-add-phot">jpg, png : 4mo max</p>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <form class="form-add-photo">
+                                        <div id="form-add-photo">
+                                            <label for="name">Titre</label>
+                                            <input type="text"  class="style-input-add-photo "  name="name" id="name" />
+                                            <label for="category">Catégorie</label>
+                                            <select name="category" id="category" class="style-input-add-photo" >
+                                                <option value=""></option>
+                                                <option value="objets">Objets</option>
+                                                <option value="appartements">Appartements</option>
+                                                <option value="hotels-restaurants">Hotels & restaurants</option>
+                                            </select>
+                                        </div>
+                                        <button for="valide" class="btn-valid" id="send-picture">Valider</button> 
+                                    </form>
+                                </div>
+                        </aside>
+                        <!--============fin section modal1 ===========--> 
                     </div>
                 </div>
-            <!-- ========section modal2 =============== -->
+                <!-- ========section modal2 =============== -->
                 <!-- ========fin section modal2 =============== -->
                 <div class="filter ">
 					<!-- code en js app.js-->
-                    <div class="imageapi">
-                    </div>
 				</div>
                 <div class="gallery">
-                    <div class="button-delet" ><i class="fa-duotone fa-trash-can-xmark"></i></div>
-                    <!-- Récupération des photos depuis l'API code en app.js-->
-                </div>
+                     <!-- Récupération des photos depuis l'API code en app.js -->
+                </div> 
             </section>
             <section id="contact">
                 <h2>Contact</h2>

@@ -1,6 +1,5 @@
-//import {  affichModal} from "./modal.js";
 var works;
-const token = localStorage.getItem("token");
+var token = localStorage.getItem("token");
 const getData = async () => {
     try {
         const response = await fetch("http://localhost:5678/api/works")
@@ -66,23 +65,21 @@ const filtreProjects = (work, filterName) => {
         }
     });
 }
-
 function checkIsAdmin(){
-    
   if(token !== null){
-     //affichage modification page admin
-     //partie haute noir
-     document.querySelector('#header-black').classList.replace("hide","show-head-black");
+    //affichage modification page admin
+    //partie haute noir
+    document.querySelector('#header-black').classList.replace("hide","show-head-black");
     //boutton edit
     document.querySelector('#button-edit-photo').classList.replace("hide","show-edit-photo");
     document.querySelector('#button-edit-text').classList.replace("hide","button-edit-text");
     document.querySelector('#button-edit-projet').classList.replace("hide","show-edit-projet");
-     // Je peux afficher les boutons de la modale
+    // Je peux afficher les boutons de la modale
     sectionFilter.classList.replace("filter","hide")
     document.querySelector('#connect-admin').classList.replace("show", "hide")
     document.querySelector('#deconnect-admin').classList.replace("hide", "show");
-  }
-  }
+    }
+}
   checkIsAdmin()
 ////// deconnexion ////////////
 document.querySelector('#deconnect-admin').addEventListener('click', function(){
