@@ -1,9 +1,7 @@
-//export { errorMessage };
 document.addEventListener("DOMContentLoaded", () => {
-    checkForm();
+    connectForm();
 });
-function checkForm() {
-    // ()=> This is arrow functions https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+function connectForm() {
     document.querySelector("#btn-connect").addEventListener("click", (event) => {
         event.preventDefault();
         const emailLogin = document.querySelector("#form-email").value;

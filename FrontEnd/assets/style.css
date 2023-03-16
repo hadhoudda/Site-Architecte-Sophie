@@ -2,7 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -61,7 +60,6 @@ body {
 section {
 	margin: 50px 0
 }
-
 h1{
 	display: flex;
 	flex-direction: column;
@@ -70,14 +68,12 @@ h1{
 	font-weight: 800;
 	color: #B1663C
 }
-
 h1 > span {
 	font-family: 'Work Sans';
 	font-size:10px;
 	letter-spacing: 0.1em;
 ;
 }
-
 h2{
 	font-family: 'Syne';
 	font-weight: 700;
@@ -88,13 +84,11 @@ nav ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
-
 }
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
 }
-
 li:hover {
 	color: #B1663C;
 }
@@ -110,14 +104,12 @@ li:hover {
 	margin: auto;
 	width: 80%;
 }
-
 #introduction article {
 	flex: 1
 }
 #introduction h2 {
 	margin-bottom: 1em;
 }
-
 #introduction p {
 	margin-bottom: 0.5em;
 }
@@ -185,9 +177,7 @@ footer nav ul {
 	justify-content: flex-end;
 	margin: 2em
 }
-/* ==================================== */
-
-/*======= section gallery =======*/
+/*======= section filtre galerie =======*/
 img{
 	object-fit: cover;
 }
@@ -197,7 +187,7 @@ img{
 	gap: 10px;
 	margin-bottom: 50px;
 }
-.style-button-filtre{
+.style-button-filtre {
 	color: #1D6154;
 	border: 1px solid #1D6154;
 	border-radius: 60px;
@@ -266,10 +256,18 @@ figcaption{
 	border:  #FFFFFF;
 }
 #btn-connect{
-	background-color: #1D6154;
+	background-color:#1D6154;
 	color: white;
 	Width :179px;
 	Height : 36px;
+	color:white;
+	border: 1px solid #1D6154;
+	border-radius: 60px;
+	font-family: 'Syne';
+	font-size: 16px;
+	text-align: center;
+	padding: 6px 15px 6px 15px;
+	cursor: pointer;
 }
 .pwd{
 	text-decoration: underline #bebbbb;
@@ -322,6 +320,7 @@ figcaption{
 	justify-content: center;
 	gap: 31px;
 }
+
 .show-edit-projet{
 	display: flex;
 	padding-top:10px;
@@ -354,25 +353,11 @@ figcaption{
 	width:100%;
 	height: 100%;
 	background:rgba(0, 0, 0, 0.3);
-	/*pour centre le modal*/
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	/* animation: fadeIn .3s both; */
-	
 }
 .modal-wrapper{
-		/* position: relative;
-		border-radius: 10px;
-		overflow: auto;
-		width: 600px;
-		
-		max-width: calc(100vh - 20px);
-		max-height: calc(100vh -40px);
-		padding: 24px;
-		background: #FFFf; */
-		/* animation: slideFromTop .5s both; */
-	
 	overflow: auto;
 	background-color: white;
 	width: 70%;
@@ -380,17 +365,18 @@ figcaption{
 	border-radius: 10px;
 	max-height:500px;
 	top: 50%;
-	/* max-width: calc(100vw -20px); */
-	/*100vw une fois la taille de largeur(vw) et (vh hauteur) de l'ecran*/
-	 /* max-height: calc(100vh -20px); */
-
+	animation: slideFromTop .8s both; 
 }	
-.close-modal{
+
+@keyframes slideFromTop{
+	from{ transform: translateY(-70px);}
+	to {transform: translateY(0px);}
+}
+.close-modal {
 	display: flex;
 	justify-content: flex-end;
 }
 .style-title{
-
 	font-family: 'Work Sans';
 	font-style: normal;
 	font-weight: 400;
@@ -404,7 +390,6 @@ figcaption{
 	flex-direction: column;
 	align-items: center;
 	padding-top: 38px;
-	
 }
 .btn-ad-photo-moda{
 	width: 237px;
@@ -412,7 +397,7 @@ figcaption{
 	left: 600px;
 	top: 1267px;
 }
-.btn-ad-photo-moda{
+.btn-style-vert{
 	background-color: #1D6154;
 	color: white;
 	border: 1px solid #829793;
@@ -480,7 +465,6 @@ figcaption{
 	top: 786px;
 	background: #E8F1F7;
 	border-radius: 3px;
-	
 	padding: 25px;
 	margin: 30px;
 }
@@ -488,11 +472,9 @@ figcaption{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* justify-content: space-evenly; */
+	
 }
-/* .style-icone-add-photo{
-	color: rgb(157, 198, 245); 
-} */
+
 .btn-file{
 	border: 1px solid #306685;
 	border-radius: 50px;
@@ -509,6 +491,7 @@ figcaption{
 	position: relative;
 	overflow: hidden;
 }
+
 .div-input-file #file{
 	left: 0;
   top: 0;
@@ -523,24 +506,20 @@ figcaption{
 	line-height: 12px;
 	color: #444444;
 }
-.form-add-photo{
-	width: 100%;
+#form-add-photo{
+	width: 70%;
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
 	gap: 10px;
-	margin: 20px 0 20px 0;
+	
 }
 .style-input-add-photo{
-	height: 50px;
+	
+	height: 40px;
     font-size: 1.2em;
     border: none;
     box-shadow: 0px 4px 14px rgb(0 0 0 / 9%);
-    margin: 20px 0 20px 0;
-
-/* border: 1px solid #FFFFFF;
-background: #FFFFFF;
-box-shadow: 0px 4px 14px  rgba(121, 107, 107, 0.09); */ 
+    margin: 3px 0 3px 0;
 }
 .icone-add-photo{
 	color: rgb(157, 198, 245);
@@ -589,10 +568,6 @@ box-shadow: 0px 4px 14px  rgba(121, 107, 107, 0.09); */
 	margin: 0;
 	padding: 0;
 }
-/**** css icone de photo modale *********/
-/* .btn-move{
-	visibility: hidden;
-} */
 
 
 

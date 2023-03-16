@@ -38,21 +38,17 @@
                     <!--*******mode edit  boutton de modification image*******-->
                     <div id="button-edit-photo" class="hide">
                         <p>
-                            <a href ="#">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                             modifier</a>
+                            <a href ="#"> <i class="fa-solid fa-pen-to-square"></i> modifier</a>
                         </p>
                     </div>
                 </figure>
                 <article>
-                  <!--*******mode edit  boutton de modification text*******-->
-                  <div id="button-edit-text" class="hide">
-                    <p>
-                        <a href ="#">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                        modifier</a>
-                    </p>
-                </div>
+                    <!--*******mode edit  boutton de modification text*******-->
+                    <div id="button-edit-text" class="hide">
+                        <p>
+                            <a href ="#"> <i class="fa-solid fa-pen-to-square"></i> modifier</a>
+                        </p>
+                    </div>
                     <h2>Designer d'espace</h2>
                     <p> 
                         Je raconte votre histoire, je valorise vos idées. Je
@@ -78,18 +74,12 @@
                     <h2>Mes Projets</h2>
                     <!--********* boutton de modification projet ***********-->
                     <div id="button-edit-projet" class="hide">
-                        <!-- <p> -->
-                        <a href="#modal1" class="js-modal" >
-                        <i class="fa-solid fa-pen-to-square"></i>
-                        modifier</a>
+                        <a href="#modal1" class="js-modal" > <i class="fa-solid fa-pen-to-square"></i> modifier</a>
                         <!-- ========section modal1 =============== -->
-                        <aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="title-modal"style="display: none;">
-                            <!-- aria-hidden="true" c'est à dire par defaut cache -->
-                            <div class="modal-wrapper"  style="display: null">
+                        <aside id="modal1" class="modal " aria-hidden="true" role="dialog" aria-labelledby="title-modal" style="display: none;">
+                            <div class="modal-wrapper js-modal-stop"  style="display: null">
                                 <div class="container-modal" id="container-modal">
-                                    <div class="close-modal" >
-                                    <a href="index.html"> <i class="fa-solid fa-xmark "></i></a>
-                                    </div>
+                                    <div class="close-modal"><i class="fa-solid fa-xmark "></i></div>
                                     <div class="body-modal">
                                         <h3 class="title-modal style-title">Galerie photo</h3>
                                         <div class="galeri-modal">
@@ -97,14 +87,13 @@
                                         </div>
                                     </div>
                                     <div class="footer-modal">
-                                    <button class="btn-ad-photo-moda"> Ajoute une photo</button> 
-                                    <a href="#" class="btn-delete-modal">Supprimer la galerie</a>
+                                        <button class="btn-ad-photo-moda btn-style-vert"> Ajoute une photo</button> 
+                                        <a href="#" class="btn-delete-modal">Supprimer la galerie</a>
                                     </div>
                                 </div>
-                                <!-- *********** affichage modal avec opition ajouter photo ************* -->
+                                <!-- *********** affichage modal avec option ajouter photo ************* -->
                                 <div class="container-ad-photo-modal" style="display: none;">
                                     <div class="close-add-modal" >
-                                        <!-- <a href="#modal1" id="icone-return"><i class="fa-solid fa-arrow-left"></i></a> -->
                                         <i class="fa-solid fa-arrow-left" id="icone-return" ></i>
                                         <a href="index.html"> <i class="fa-solid fa-xmark " ></i></a>
                                     </div>
@@ -112,15 +101,15 @@
                                         <h3 class="style-title"  >Ajoute photo</h3>
                                         <div class="add-photo" >
                                             <div class="container-photo" style="display: null;">
-                                            <!-- bouton ajoute photo --> 
-                                            <i class="fa-solid fa-image icone-add-photo " ></i>
-                                            <div class="div-input-file">
-                                            <button for="file" class="btn-file" >+ Ajoute photo</button> 
-                                            <input type="file" name="file" id="file" > 
+                                                <!-- bouton ajoute photo --> 
+                                                <i class="fa-solid fa-image icone-add-photo " ></i>
+                                                <div class="div-input-file">
+                                                    <button for="file" class="btn-file" >+ Ajoute photo</button> 
+                                                    <input type="file" name="file" id="file" > 
+                                                </div>
+                                                <p class="text-add-phot">jpg, png : 4mo max</p>
+                                            </div>
                                         </div>
-                                            <p class="text-add-phot">jpg, png : 4mo max</p>
-                                        </div>
-                                    </div>
                                     </div>
                                     <form class="form-add-photo">
                                         <div id="form-add-photo">
@@ -136,13 +125,11 @@
                                         </div>
                                         <button for="valide" class="btn-valid" id="send-picture">Valider</button> 
                                     </form>
-                                </div>
+                            </div>
                         </aside>
                         <!--============fin section modal1 ===========--> 
                     </div>
                 </div>
-                <!-- ========section modal2 =============== -->
-                <!-- ========fin section modal2 =============== -->
                 <div class="filter ">
 					<!-- code en js app.js-->
 				</div>
@@ -159,12 +146,7 @@
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" />
                     <label for="message">Message</label>
-                    <textarea
-                        name="message"
-                        id="message"
-                        cols="30"
-                        rows="10"
-                    ></textarea>
+                    <textarea name="message" id="message" cols="30" rows="10" ></textarea>
                     <input type="submit" value="Envoyer" />
                 </form>
             </section>

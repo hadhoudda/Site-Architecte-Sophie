@@ -65,7 +65,7 @@ const filtreProjects = (work, filterName) => {
         }
     });
 }
-function checkIsAdmin(){
+function connectAdmin(){
   if(token !== null){
     //affichage modification page admin
     //partie haute noir
@@ -80,7 +80,7 @@ function checkIsAdmin(){
     document.querySelector('#deconnect-admin').classList.replace("hide", "show");
     }
 }
-  checkIsAdmin()
+connectAdmin()
 ////// deconnexion ////////////
 document.querySelector('#deconnect-admin').addEventListener('click', function(){
     localStorage.removeItem("token")
