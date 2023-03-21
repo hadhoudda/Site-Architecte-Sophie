@@ -10,7 +10,8 @@
 	<script src="https://kit.fontawesome.com/32fe4a8f5c.js" crossorigin="anonymous"></script>
     <meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
-    <script src="app.js" type="module" defer></script>
+    <script src="app.js" defer></script>
+    <!-- <script src="modal.js" defer></script>  -->
     </head>
     <body>
         <header>
@@ -38,7 +39,9 @@
                     <!--*******mode edit  boutton de modification image*******-->
                     <div id="button-edit-photo" class="hide">
                         <p>
-                            <a href ="#"> <i class="fa-solid fa-pen-to-square"></i> modifier</a>
+                            <a href ="#">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                             modifier</a>
                         </p>
                     </div>
                 </figure>
@@ -72,62 +75,10 @@
             <section id="portfolio">
                 <div class="edit-project">
                     <h2>Mes Projets</h2>
-                    <!--********* boutton de modification projet ***********-->
+                    <!--*********mode edit boutton de modification projet ***********-->
+                    <!-- *********appel modal********* -->
                     <div id="button-edit-projet" class="hide">
-                        <a href="#modal1" class="js-modal" > <i class="fa-solid fa-pen-to-square"></i> modifier</a>
-                        <!-- ========section modal1 =============== -->
-                        <aside id="modal1" class="modal " aria-hidden="true" role="dialog" aria-labelledby="title-modal" style="display: none;">
-                            <div class="modal-wrapper js-modal-stop"  style="display: null">
-                                <div class="container-modal" id="container-modal">
-                                    <div class="close-modal"><i class="fa-solid fa-xmark "></i></div>
-                                    <div class="body-modal">
-                                        <h3 class="title-modal style-title">Galerie photo</h3>
-                                        <div class="galeri-modal">
-                                            <!-- code en js modal.mjs-->
-                                        </div>
-                                    </div>
-                                    <div class="footer-modal">
-                                        <button class="btn-ad-photo-moda btn-style-vert"> Ajoute une photo</button> 
-                                        <a href="#" class="btn-delete-modal">Supprimer la galerie</a>
-                                    </div>
-                                </div>
-                                <!-- *********** affichage modal avec option ajouter photo ************* -->
-                                <div class="container-ad-photo-modal" style="display: none;">
-                                    <div class="close-add-modal" >
-                                        <i class="fa-solid fa-arrow-left" id="icone-return" ></i>
-                                        <a href="index.html"> <i class="fa-solid fa-xmark " ></i></a>
-                                    </div>
-                                    <div class="ad-photo-modal">
-                                        <h3 class="style-title"  >Ajoute photo</h3>
-                                        <div class="add-photo" >
-                                            <div class="container-photo" style="display: null;">
-                                                <!-- bouton ajoute photo --> 
-                                                <i class="fa-solid fa-image icone-add-photo " ></i>
-                                                <div class="div-input-file">
-                                                    <button for="file" class="btn-file" >+ Ajoute photo</button> 
-                                                    <input type="file" name="file" id="file" > 
-                                                </div>
-                                                <p class="text-add-phot">jpg, png : 4mo max</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <form class="form-add-photo">
-                                        <div id="form-add-photo">
-                                            <label for="name">Titre</label>
-                                            <input type="text"  class="style-input-add-photo "  name="name" id="name" />
-                                            <label for="category">Catégorie</label>
-                                            <select name="category" id="category" class="style-input-add-photo" >
-                                                <option value=""></option>
-                                                <option value="objets">Objets</option>
-                                                <option value="appartements">Appartements</option>
-                                                <option value="hotels-restaurants">Hotels & restaurants</option>
-                                            </select>
-                                        </div>
-                                        <button for="valide" class="btn-valid" id="send-picture">Valider</button> 
-                                    </form>
-                            </div>
-                        </aside>
-                        <!--============fin section modal1 ===========--> 
+                        <a href="#section-modal" class="js-modal" ><i class="fa-solid fa-pen-to-square"></i>modifier</a>
                     </div>
                 </div>
                 <div class="filter ">
@@ -146,7 +97,12 @@
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" />
                     <label for="message">Message</label>
-                    <textarea name="message" id="message" cols="30" rows="10" ></textarea>
+                    <textarea
+                        name="message"
+                        id="message"
+                        cols="30"
+                        rows="10"
+                    ></textarea>
                     <input type="submit" value="Envoyer" />
                 </form>
             </section>
@@ -158,6 +114,91 @@
                 </ul>
             </nav>
         </footer>
-        <script src="modal.js"></script>
     </body>
+ <!-- ======== section modale ============ -->
+ <div id="section-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="title-modal" style="display: none;">
+    <div class="modal-wrapper js-modal-stop" >
+
+        <!--========= contenue modale vue 1 =========-->
+
+        <div class="modal-vue1  js-container-modal" style="display: null;">
+            <!-- gérer la  fermeture de modale -->
+            <div class="style-close-modal js-close-modal " >
+                <i class="fa-solid fa-xmark  "></i>
+            </div>
+            <!-- contenu de modale vue 1 -->
+            <div class="style-container-modal">
+                <h3 class="title-modal style-title-modal">Galerie photo</h3>
+                <div class="js-galeri-modal style-galeri-modal">
+                    <!-- code en js modal.js-->
+                </div>
+                <button class="btn-add-photo-modal"> Ajoute une photo</button> 
+                <p class="style-btn-delete-gallery">Supprimer la galerie</p>
+            </div>
+        </div>
+
+        <!--========= contenue modale vue 2 : option ajouter photo =========-->
+
+        <div class="container-add-photo-modal" style="display: none;">
+            <!-- gérer la  fermeture de modale et retour-->
+            <div class="close-add-modal" >
+                <i class="fa-solid fa-arrow-left" id="icone-return" ></i>
+                <i class="fa-solid fa-xmark  js-close-modal-vue2" ></i>
+            </div>
+            <!-- contenu de modale avec option ajouter photo -->
+            <div class="add-photo-modal">
+                <h3 class="style-title-modal"  >Ajoute photo</h3>
+                <div class="add-photo" >
+                    <div class="container-photo" style="display: null;">
+                        <!-- bouton ajoute photo --> 
+                        <i class="fa-solid fa-image icone-add-photo " ></i>
+                        <div class="div-input-file">
+                            <button for="file" class="btn-file" >+ Ajoute photo</button> 
+                            <input type="file" name="file" id="file" > 
+                        </div>
+                        <p class="text-add-phot">jpg, png : 4mo max</p>
+                    </div>
+                </div>
+            </div>
+            <!-- formulaire de modale vue 2 -->
+            <form class="form-add-photo">
+                <div id="form-add-photo">
+                        <label for="title">Titre</label>
+                        <input type="text" name="title" id="title" class="style-input-add-photo" >
+                        <label for="category">Catégorie</label>
+                        <select name="category" id="category" class="style-input-add-photo" >
+                            <option value=""></option>
+                            <option value="objets">Objets</option>
+                            <option value="appartements">Appartements</option>
+                            <option value="hotels-restaurants">Hotels & restaurants</option>
+                        </select>
+                </div>
+                <button for="valide" class="btn-valid" id="send-picture">Valider </button>
+            </form>
+        </div>
+    </div>
+</div>
+ <!-- ======== fin section modale ============ -->
 </html>
+
+
+<!-- 
+<div id="section-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="title-modal" style="display: none;">
+    <div class="modal-wrapper" style="display: null" >
+        
+        <div class="container-modal" id="container-modal">
+            <div class="close-modal" >
+            <a href="index.html"> <i class="fa-solid fa-xmark "></i></a>
+            </div>
+            <div class="body-modal">
+                <h3 class="title-modal style-title">Galerie photo</h3>
+                <div class="galeri-modal">
+                    <!-- code en js modal.mjs-->
+            <!-- </div>
+            </div>
+            <div class="footer-modal">
+                <button class="btn-ad-photo-moda"> Ajoute une photo</button> 
+                <a href="#" class="btn-delete-modal">Supprimer la galerie</a>
+            </div>
+        </div>
+</div> --> -->

@@ -1,4 +1,6 @@
+//export { errorMessage };
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("connexion admin")
     connectForm();
 });
 function connectForm() {
@@ -42,6 +44,3 @@ function errorMessage(message) {
         },4000);
     }
 }
-
-
-  

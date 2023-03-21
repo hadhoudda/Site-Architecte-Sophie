@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -60,6 +61,7 @@ body {
 section {
 	margin: 50px 0
 }
+
 h1{
 	display: flex;
 	flex-direction: column;
@@ -68,12 +70,14 @@ h1{
 	font-weight: 800;
 	color: #B1663C
 }
+
 h1 > span {
 	font-family: 'Work Sans';
 	font-size:10px;
 	letter-spacing: 0.1em;
 ;
 }
+
 h2{
 	font-family: 'Syne';
 	font-weight: 700;
@@ -84,11 +88,13 @@ nav ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
+
 }
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
 }
+
 li:hover {
 	color: #B1663C;
 }
@@ -104,12 +110,14 @@ li:hover {
 	margin: auto;
 	width: 80%;
 }
+
 #introduction article {
 	flex: 1
 }
 #introduction h2 {
 	margin-bottom: 1em;
 }
+
 #introduction p {
 	margin-bottom: 0.5em;
 }
@@ -177,7 +185,9 @@ footer nav ul {
 	justify-content: flex-end;
 	margin: 2em
 }
-/*======= section filtre galerie =======*/
+/* ==================================== */
+
+/*======= section gallery =======*/
 img{
 	object-fit: cover;
 }
@@ -260,7 +270,6 @@ figcaption{
 	color: white;
 	Width :179px;
 	Height : 36px;
-	color:white;
 	border: 1px solid #1D6154;
 	border-radius: 60px;
 	font-family: 'Syne';
@@ -320,7 +329,6 @@ figcaption{
 	justify-content: center;
 	gap: 31px;
 }
-
 .show-edit-projet{
 	display: flex;
 	padding-top:10px;
@@ -344,107 +352,101 @@ figcaption{
 .show{
 	display: flex;
 }
-/********** css de modal 1 ***************/
+/* ========== css modal vue1 ========== */
 .modal{
-	/* z-index: 2; */
 	position:fixed;
 	top: 0;
 	left: 0;
 	width:100%;
 	height: 100%;
 	background:rgba(0, 0, 0, 0.3);
+	/*pour centre le modal*/
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	/* animation: fadeIn .3s both; */
+	
 }
-.modal-wrapper{
+.modal-wrapper{	
 	overflow: auto;
 	background-color: white;
-	width: 70%;
-	padding: 24px;
+	width: 59%;
+	padding: 24px; 
 	border-radius: 10px;
-	max-height:500px;
-	top: 50%;
-	animation: slideFromTop .8s both; 
-}	
-
-@keyframes slideFromTop{
-	from{ transform: translateY(-70px);}
-	to {transform: translateY(0px);}
+	max-height: 500px;
 }
-.close-modal {
+.style-close-modal{
 	display: flex;
 	justify-content: flex-end;
 }
-.style-title{
-	font-family: 'Work Sans';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 26px;
-	line-height: 30px;
-	text-align: center;
-	margin-bottom: 20px;
-}
-.footer-modal{
+.style-container-modal{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-top: 38px;
+	gap: 25px;
 }
-.btn-ad-photo-moda{
-	width: 237px;
-	height: 36px;
-	left: 600px;
-	top: 1267px;
+.style-title-modal{
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 26px;	
 }
-.btn-style-vert{
+.style-galeri-modal{
+	width: 80%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+	grid-column-gap: 10px;
+	grid-row-gap: 20px;
+	padding-bottom: 60px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #B3B3B3;
+}
+.style-galeri-modal img {
+	width: 100%;
+}
+.btn-add-photo-modal{
 	background-color: #1D6154;
 	color: white;
-	border: 1px solid #829793;
+	width: 237px;
+	height: 36px;
+	border: 1px solid #1D6154;
 	border-radius: 60px;
 	font-family: 'Syne';
 	font-size: 16px;
 	text-align: center;
+	padding: 6px 15px 6px 15px;
 	cursor: pointer;
 }
-.btn-delete-modal{
+.style-btn-delete-gallery{
 	color: red;
-	margin: 23px;
+	margin-bottom: 48px;
 }
-.galeri-modal {
-	padding-top: 20px;
-	width: 80%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-column-gap: 3px;
-    grid-row-gap: 6px;
-}
-.galeri-modal img{
-	width: 85%;
-}
+/*======= css icone sur photo de modal =======*/
+.style-galeri-modal article{
+	position: relative;
+	
+ }
 .index{
 	z-index: auto;
 }
-.icone-photo-modal{
+.style-icone-photo-modal{
+	
 	display: flex;
 	flex-wrap: nowrap;
 	gap: 2px;
 	position: absolute;
 	width: auto;
-	right: 15%;
+	right: 4px;
 	top: 4px;
-}
-.icone-photo-modal button{
-	font-size: 80%;
-	background: black;
-	padding: 0 2px 0 2px;
-}
-.galeri-modal article{
-	position: relative;
 	
- }
-/*======css modal ajoute photo =========*/
+}
+.style-icone-photo{
+	font-size: 100%;
+	background-color: black;
+	color: white;
+	padding: 4px;
+}
+/*======css modal vu 2 ajoute photo =========*/
 
 .close-add-modal{
 	display: flex;
@@ -453,35 +455,39 @@ figcaption{
 #icone-return{
 	cursor: pointer;	
 }
-.ad-photo-modal{
+.add-photo-modal{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	gap: 20px;
 }
 .add-photo{
 	width: 70%;
-	height: 169px;
-	left: 510px;
-	top: 786px;
+	height: 170px;
 	background: #E8F1F7;
 	border-radius: 3px;
 	padding: 25px;
-	margin: 30px;
+	/* margin: 30px; */
 }
 .container-photo{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	
+	padding: 5px;
+	/* justify-content: space-evenly; */
 }
-
+/* .style-icone-add-photo{
+	color: rgb(157, 198, 245); 
+} */
 .btn-file{
-	border: 1px solid #306685;
+	border: 1px solid #CBD6DC;
 	border-radius: 50px;
 	font-family: 'Syne';
 	font-size: 16px;
 	text-align: center;
 	color : #306685;
+	background-color: #CBD6DC;
 	width: 173px;
 	height: 36px;
 	cursor: pointer;	
@@ -491,7 +497,6 @@ figcaption{
 	position: relative;
 	overflow: hidden;
 }
-
 .div-input-file #file{
 	left: 0;
   top: 0;
@@ -506,24 +511,26 @@ figcaption{
 	line-height: 12px;
 	color: #444444;
 }
-#form-add-photo{
-	width: 70%;
+.form-add-photo{
+	width: 100%;
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+
+	align-items: center;
+	
 	
 }
 .style-input-add-photo{
-	
-	height: 40px;
+	height: 50px;
     font-size: 1.2em;
     border: none;
+	background-color: white;
     box-shadow: 0px 4px 14px rgb(0 0 0 / 9%);
-    margin: 3px 0 3px 0;
+    margin:5px 0 20px 0;
 }
 .icone-add-photo{
 	color: rgb(157, 198, 245);
-	font-size: 100px;
+	font-size: 90px;
 }
 .btn-valid{
 	border: 1px solid #A7A7A7;
@@ -536,16 +543,10 @@ figcaption{
 	width: 173px;
 	height: 36px;
 	cursor: pointer;	
+}
 
-}
-.form-add-photo{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-evenly;
-	gap: 30px;
-}
 #form-add-photo{
+	width: 70%;
 	text-align: left;
 	margin-top:30px;
 	display: flex;
@@ -568,6 +569,7 @@ figcaption{
 	margin: 0;
 	padding: 0;
 }
+
 
 
 
