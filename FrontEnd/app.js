@@ -1,9 +1,10 @@
 let works;
 let modal = null
-const token = localStorage.getItem("token");
-
-const cleToken = JSON.parse(localStorage.getItem("token")).token;
-//console.log(token);
+//const token = localStorage.getItem("token");
+//const cleToken = JSON.parse(localStorage.getItem("token")).token;
+const file = document.querySelector("#file")
+let workPicture = choicePhoto()
+//********fonction recupere les donneees de l'api **********/
 const getData = async () => {
     try {
         const response = await fetch("http://localhost:5678/api/works")
@@ -50,23 +51,11 @@ buttonCategory3.addEventListener("click", function () {
 //******** fonction pour affichager les projets **********//
 const afficherProject = (works) => {
     document.querySelector(".gallery").innerHTML = null;
-  
     for (let elem in works) {
         const sectionGallery = document.querySelector(".gallery")
         const worksElement = document.createElement("article")
         worksElement.setAttribute("id", works[elem].id)
-
-////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////
-// const ee = sectionGallery.appendChild(worksElement)
-//         console.log(ee)
-
-
-
-
         const imageElement = document.createElement("img")
-        
-        // console.log(imageElement)
         imageElement.src = works[elem].imageUrl
         imageElement.crossOrigin = 'anonymous'
         const titleElement = document.createElement("h3");
@@ -147,11 +136,13 @@ const closeModal = function (e) {
 const stopPropagation = function (e) {
     e.stopPropagation()
 }
+
 //********** ecouter boutton retour ***********//
 document.getElementById("icone-return").addEventListener("click", function () {
     document.querySelector(".js-container-modal").style.display = null;
     document.querySelector(".container-add-photo-modal").style.display = "none";
 });
+
 //********** ecouter boutton fermeture modale vue 2 ***********//
 document.querySelector('.js-close-modal-vue2').addEventListener('click', closeModal)
 
@@ -161,47 +152,47 @@ document.querySelector(".btn-add-photo-modal").addEventListener("click", functio
     document.querySelector(".container-add-photo-modal").style.display =null;
 });
 
-
 //********** affichage de modal avec les photos de projets et ses foncationalites**********//
 function affichModal(works) {
     console.log(works)
-    document.querySelector(".js-galeri-modal").innerHTML = null;
+    document.querySelector(".js-galeri-modal").innerHTML = null
     for (let elem in works) {
-        const sectionGallery = document.querySelector(".js-galeri-modal");
-        const worksElement = document.createElement("article");
-        const imageElement = document.createElement("img");
-        imageElement.src = works[elem].imageUrl;
+        const sectionGallery = document.querySelector(".js-galeri-modal")
+        const worksElement = document.createElement("article")
+        worksElement.setAttribute("id", works[elem].id)
+        const imageElement = document.createElement("img")
+        imageElement.src = works[elem].imageUrl
         imageElement.crossOrigin = 'anonymous'
-        const titleElement = document.createElement("span");
-        titleElement.innerText = `éditer`;
-        sectionGallery.appendChild(worksElement);
-        worksElement.appendChild(imageElement);
-        worksElement.appendChild(titleElement);
-        //ajouter icone sur photo de modale
+        const titleElement = document.createElement("span")
+        titleElement.innerText = `éditer`
+        sectionGallery.appendChild(worksElement)
+        worksElement.appendChild(imageElement)
+        worksElement.appendChild(titleElement)
+        //*** ajouter icone sur la photo de modale
         const divIcone = document.createElement('div')
         divIcone.classList.add('style-icone-photo-modal')
-        //boutton supprime photo
+        //*** boutton supprime photo
         const btnDelet = document.createElement('i')
         btnDelet.classList.add( 'fa-solid',"fa-trash-can", "btn-delet","style-icone-photo" )
-        btnDelet.setAttribute("id", works[elem].id)
-        //boutton agrandir photo
-        const iconeRemov = document.createElement('i')
-        iconeRemov.classList.add("fa-solid", "fa-up-down-left-right", "btn-move", "style-icone-photo")
-        iconeRemov.style.display = "none"
+        //*** boutton agrandir photo
+        const iconeEnlarge = document.createElement('i')
+        iconeEnlarge.classList.add("fa-solid", "fa-up-down-left-right", "btn-enlarge", "style-icone-photo")
+        iconeEnlarge.style.display = "none"
         worksElement.appendChild(divIcone)
-        divIcone.appendChild(iconeRemov)
+        divIcone.appendChild(iconeEnlarge)
         divIcone.appendChild(btnDelet)
-        //***** cacher et afficher l'icone agrandir image *****//
+        //*** cacher et afficher l'icone agrandir image *****//
         imageElement.addEventListener("mouseover", function(){
-             iconeRemov.style.display = null;
+             iconeEnlarge.style.display = null
         })
         //ecoute boutton supprime pour chaque photo modale
-        deletProject(btnDelet,works[elem].id,worksElement)
+        deletProject(btnDelet,works[elem].id)
     }
 }
 
 //********** fonction pour supprime un projet **********//
-function deletProject(btn, idProject, project){
+function deletProject(btn, idProject){
+    const cleToken = JSON.parse(localStorage.getItem("token")).token;
     btn.addEventListener("click", function(){
         if (confirm("Désirez-vous vraiment supprimer ce projet ?") == true) {
             fetch(`http://localhost:5678/api/works/${idProject}`, {
@@ -221,19 +212,21 @@ function deletProject(btn, idProject, project){
                     }
             })
             //****** supprime le projet à la modale ******//
-            project.remove()
+            let projectModalDelete = document.getElementById(`${idProject}`)
+            console.log( projectModalDelete )
+            projectModalDelete.remove()
            //******* supprime le projet à la page d'accueil *******//
-            const projectDelete =  document.querySelector(".gallery").querySelector("article")
-            console.log("le numero de projet supprime est:" + idProject)
+           ///////////////////////////////////////////////////////////////////////////////////////////////////////////////)
+            let projectDelete =  document.getElementById(`${idProject}`)
             console.log( projectDelete )
             projectDelete.remove()
+            console.log("le projet numero "  + idProject + " est bien supprimé")
         }
     })
 }
 
-//********** ecouter boutton ajouter photo **********//
+//********** fonction choisir photo ajoutée **********//
 function choicePhoto(){
-    const file = document.querySelector("#file")
     file.addEventListener("change", function (event) {
     const pictureWork = event.target.files;
     const fileType = ["image/jpg", "image/png"];
@@ -254,18 +247,16 @@ function choicePhoto(){
     return workPicture
     });
 }
-    // fin ecoute bou
 
-//const file = document.querySelector("#file")
-//choicePhoto()
-let workPicture = choicePhoto()
 // **********  fonction ajoute photo **********//
 function addPhoto(event){
     event.preventDefault();
     const cleToken = JSON.parse(localStorage.getItem("token")).token;
+    console.log(cleToken )
     const titleValue = document.querySelector("#title").value;
     const categoryValue = document.querySelector("#category").value;
-    if(titleValue === "" || categoryValue === "" || workPicture === undefined  || workPicture === ""){
+    const newData = []
+    if(titleValue === "" || categoryValue === "" || workPicture === undefined){
         return alert("Veuillez remplir tous les champs.");
     }
 
@@ -295,29 +286,24 @@ function addPhoto(event){
     }).then((response)=>{
 
        return response.json();
-    }).then((result)=>{
+    }).then((result)=>{result
         console.log(result)
-        })
-    //getData()
-    // retour affichage de modale vue1 // 
+    //*******  ajoute le projet à la page d'accueil et modale  *******//
+    console.log(works)
+    works = works.concat(result)
+    console.log(works)
+    afficherProject(works)
+    affichModal(works)
+ })
+    //******* retour à l' affichage de modale vue1 *******// 
     document.querySelector(".js-container-modal").style.display = null;
     document.querySelector(".container-add-photo-modal").style.display ="none";
 
-    /////////////ajoute photo au page document.querySelector(".gallery").appendChild(project)
-
+    //********** vider les contenus de modale *************//
+    document.querySelector("#title").value = ""
+    document.querySelector("#category").value = ""
+    document.querySelector(".container-photo").style.display = null
 }
+
 //**********ecouter boutton valide pour ajouter photo **********//
-
-
-affichNewProject()
-////////////////////function affichage nouveau projet
-function affichNewProject(){
-    const newProject =  document.querySelector("#send-picture").addEventListener("click", addPhoto)
-    console.log ("un nouveau projet est ajouté " )
-        // document.querySelector(".gallery").innerHTML += affichNewProject(newProject) ;
-        // document.querySelector(".js-galeri-modal").innerHTML += affichModal(newProject)
-        //affichNewProject(newProject)
-        //console.log("nouveau projet" + newProject)
-        
-}
-
+document.querySelector("#send-picture").addEventListener("click", addPhoto)
