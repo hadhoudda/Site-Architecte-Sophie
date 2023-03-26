@@ -1,4 +1,3 @@
-//export { errorMessage };
 document.addEventListener("DOMContentLoaded", () => {
     console.log("connexion admin")
     connectForm();

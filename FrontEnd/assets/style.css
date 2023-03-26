@@ -197,7 +197,7 @@ img{
 	gap: 10px;
 	margin-bottom: 50px;
 }
-.style-button-filtre {
+.style-button-filter {
 	color: #1D6154;
 	border: 1px solid #1D6154;
 	border-radius: 60px;
@@ -207,7 +207,7 @@ img{
 	padding: 6px 15px 6px 15px;
 	cursor: pointer;
 }
-.style-button-filtre:focus {
+.style-button-filter:focus {
 	background-color: #1D6154;
 	color: white;
 } 
