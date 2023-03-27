@@ -1,9 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log("page d'accueil");
-    getData()
+    initWindow()
 });
 //********fonction recupere les donneees de l'api **********/
-
+function initWindow(){
+    getData()
+    displayButtonFilter();
+    connectAdmin();
+}
 const getData = async () => {
     try {
         const response = await fetch("http://localhost:5678/api/works");
@@ -17,10 +21,6 @@ const getData = async () => {
         document.querySelector(".gallery").innerHTML = null;
         for (let work of data) {
             afficheProject(work);
-        }
-        displayButtonFilter();
-        connectAdmin();
-        for (let work of data) {
             affichModal(work);
         }
     } catch (error) {
@@ -59,6 +59,7 @@ async function displayButtonFilter() {
     btnAllCategory.appendChild(btnName);
     sectionFilter.appendChild(btnAllCategory);
     console.log(btnAllCategory);
+    btnAllCategory.addEventListener('click',getData)
     //*** creation des boutons de filter ***/
     for (let elem of data) {
         const btnCategory = document.createElement("button");
@@ -70,6 +71,11 @@ async function displayButtonFilter() {
         btnCategory.appendChild(btnName);
         sectionFilter.appendChild(btnCategory);
         console.log(btnCategory);
+        btnCategory.addEventListener('click', function(){
+            let works = getData()
+            const project = works.filter( work => work.categoryId=== elem.id)
+            return project            
+        })
     }
 }
 
