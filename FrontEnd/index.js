@@ -32,6 +32,7 @@ const getData = async () => {
 const afficheProject = (work) => {
     const sectionGallery = document.querySelector(".gallery");
     const worksElement = document.createElement("article");
+    worksElement.setAttribute("class", "figure");
     worksElement.setAttribute("data-category",`${work.category.id}`);
     worksElement.setAttribute("id", work.id);
     const imageElement = document.createElement("img");
@@ -45,40 +46,50 @@ const afficheProject = (work) => {
 };
 
 //********* fonction pour ajouter les bouttons de filter *********//
-async function displayButtonFilter() {
-    const response = await fetch("http://localhost:5678/api/categories");
-    const data = await response.json();
-    console.log(data);
-    const sectionFilter = document.querySelector(".filter");
-    const btnAllCategory = document.createElement("button");
-    btnAllCategory.setAttribute("data-cat", 0);
-    btnAllCategory.setAttribute("id", "Tous");
-    btnAllCategory.classList.add("style-button-filter");
+async function displayButtonFilter(){
+const response = await fetch("http://localhost:5678/api/categories");
+const data = await response.json();
+console.log(data);
+const sectionFilter = document.querySelector(".filter");
+const btnAllCategory = document.createElement("button");
+btnAllCategory.setAttribute("id", 0);
+btnAllCategory.classList.add("style-button-filter");
+const btnName = document.createElement("p");
+btnName.innerText = "Tous";
+btnAllCategory.appendChild(btnName);
+sectionFilter.appendChild(btnAllCategory);
+btnAllCategory.addEventListener("click", () => filterProjects(0));
+//*** creation des boutons de filter ***/
+for (let elem of data) {
+    const btnCategory = document.createElement("button");
+    btnCategory.setAttribute("id", elem.id);
+    btnCategory.classList.add("style-button-filter");
     const btnName = document.createElement("p");
-    btnName.innerText = "Tous";
-    btnAllCategory.appendChild(btnName);
-    sectionFilter.appendChild(btnAllCategory);
-    console.log(btnAllCategory);
-    btnAllCategory.addEventListener('click',getData)
-    //*** creation des boutons de filter ***/
-    for (let elem of data) {
-        const btnCategory = document.createElement("button");
-        btnCategory.setAttribute("data-cat", elem.id);
-        btnCategory.setAttribute("id", elem.name);
-        btnCategory.classList.add("style-button-filter");
-        const btnName = document.createElement("p");
-        btnName.innerText = elem.name;
-        btnCategory.appendChild(btnName);
-        sectionFilter.appendChild(btnCategory);
-        console.log(btnCategory);
-        btnCategory.addEventListener('click', function(){
-            let works = getData()
-            const project = works.filter( work => work.categoryId=== elem.id)
-            return project            
-        })
+    btnName.innerText = elem.name;
+    btnCategory.appendChild(btnName);
+    sectionFilter.appendChild(btnCategory);
+    btnCategory.addEventListener("click", () => filterProjects(elem.id));
     }
 }
 
+//********* fonction pour filter les projets*********//
+function filterProjects(id) {
+const allClass = document.getElementsByClassName("figure");
+for (let elem of allClass) {
+    //console.log(elem.dataset.category);
+    //console.log(id);
+    if (id !== 0) {
+        if (parseInt(elem.dataset.category) !== id) {
+            elem.classList.add("hide");
+        } else {
+            if (elem.classList.contains("hide"))
+                elem.classList.remove("hide");
+        }
+    } else {
+        if (elem.classList.contains("hide")) elem.classList.remove("hide");
+    }
+}
+}
 //******* fonction connexion admin ********//
 function connectAdmin() {
     const token = localStorage.getItem("token");
