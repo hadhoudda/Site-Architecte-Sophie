@@ -2,12 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("page d'accueil");
     initWindow()
 });
-//********fonction recupere les donneees de l'api **********/
+
+//********fonction général **********//
 function initWindow(){
     getData()
     displayButtonFilter();
     connectAdmin();
 }
+
+//********fonction pour récupèrer les données de l'api **********//
 const getData = async () => {
     try {
         const response = await fetch("http://localhost:5678/api/works");
@@ -20,8 +23,9 @@ const getData = async () => {
         document.querySelector(".js-galeri-modal").innerHTML = null;
         document.querySelector(".gallery").innerHTML = null;
         for (let work of data) {
-            afficheProject(work);
+            displayProject(work);
             affichModal(work);
+            deletAllProject(work.id)
         }
     } catch (error) {
         alert(error);
@@ -29,7 +33,7 @@ const getData = async () => {
 };
 
 //******** fonction pour affichager les projets **********//
-const afficheProject = (work) => {
+const displayProject = (work) => {
     const sectionGallery = document.querySelector(".gallery");
     const worksElement = document.createElement("article");
     worksElement.setAttribute("class", "figure");
@@ -43,7 +47,7 @@ const afficheProject = (work) => {
     sectionGallery.appendChild(worksElement);
     worksElement.appendChild(imageElement);
     worksElement.appendChild(titleElement);
-};
+}
 
 //********* fonction pour ajouter les bouttons de filter *********//
 async function displayButtonFilter(){
@@ -75,21 +79,21 @@ for (let elem of data) {
 //********* fonction pour filter les projets*********//
 function filterProjects(id) {
 const allClass = document.getElementsByClassName("figure");
-for (let elem of allClass) {
-    //console.log(elem.dataset.category);
-    //console.log(id);
-    if (id !== 0) {
-        if (parseInt(elem.dataset.category) !== id) {
-            elem.classList.add("hide");
+    for (let elem of allClass) {
+        if (id !== 0) {
+            if (parseInt(elem.dataset.category) !== id) {
+                elem.classList.add("hide");
+            } else {
+                if (elem.classList.contains("hide"))
+                    elem.classList.remove("hide");
+            }
         } else {
             if (elem.classList.contains("hide"))
                 elem.classList.remove("hide");
         }
-    } else {
-        if (elem.classList.contains("hide")) elem.classList.remove("hide");
     }
 }
-}
+
 //******* fonction connexion admin ********//
 function connectAdmin() {
     const token = localStorage.getItem("token");
@@ -107,10 +111,10 @@ function connectAdmin() {
         document.querySelector("#deconnect-admin").addEventListener("click", deconnectAdmin);
     }
 }
+
 //***** fonction deconnect admin deconnexion *****//
 function deconnectAdmin() {
-        localStorage.removeItem("token");
-        document.querySelector("#connect-admin").classList.replace("hide", "show");
-        document.querySelector("#deconnect-admin").classList.replace("show", "hide");
-
+    localStorage.removeItem("token");
+    document.querySelector("#connect-admin").classList.replace("hide", "show");
+    document.querySelector("#deconnect-admin").classList.replace("show", "hide");
 }

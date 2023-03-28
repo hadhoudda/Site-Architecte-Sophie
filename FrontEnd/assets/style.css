@@ -61,7 +61,6 @@ body {
 section {
 	margin: 50px 0
 }
-
 h1{
 	display: flex;
 	flex-direction: column;
@@ -70,14 +69,11 @@ h1{
 	font-weight: 800;
 	color: #B1663C
 }
-
 h1 > span {
 	font-family: 'Work Sans';
 	font-size:10px;
 	letter-spacing: 0.1em;
-;
 }
-
 h2{
 	font-family: 'Syne';
 	font-weight: 700;
@@ -88,13 +84,11 @@ nav ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
-
 }
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
 }
-
 li:hover {
 	color: #B1663C;
 }
@@ -110,14 +104,12 @@ li:hover {
 	margin: auto;
 	width: 80%;
 }
-
 #introduction article {
 	flex: 1
 }
 #introduction h2 {
 	margin-bottom: 1em;
 }
-
 #introduction p {
 	margin-bottom: 0.5em;
 }
@@ -132,10 +124,8 @@ li:hover {
 	grid-column-gap: 20px;
 	grid-row-gap: 20px;
 }
-
 .gallery img {
 	width: 100%;
-
 }
 #contact {
 	width: 50%;
@@ -143,7 +133,6 @@ margin: auto;
 }
 #contact > * {
 	text-align: center;
-
 }
 #contact h2{
 	margin-bottom: 20px;
@@ -154,7 +143,6 @@ margin: auto;
 	display: flex;
 	flex-direction: column;
 }
-
 #contact input {
 	height: 50px;
 	font-size: 1.2em;
@@ -168,7 +156,6 @@ margin: auto;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
-
 input[type="submit"]{
 	font-family: 'Syne';
 	font-weight: 700;
@@ -179,14 +166,11 @@ input[type="submit"]{
 	text-align: center;
 	border-radius: 60px ;
 }
-
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em
 }
-/* ==================================== */
-
 /*======= section gallery =======*/
 img{
 	object-fit: cover;
@@ -211,28 +195,27 @@ img{
 	background-color: #1D6154;
 	color: white;
 } 
-
 /*======= Fin Section Filter ======*/
 /*======= Section connexion ======*/
 a {
 	text-decoration: none;
 	color: black;
 }
+#login{
+	font-size: 16px;
+	font-weight: 600;
+}
 .edit{
 	display: flex;
 	justify-content: center;
 	gap: 30px;
-	
 }
 #header-black,
 .text-edit{
 	padding: 10px 5px 0 0;
-
 }
-
 figcaption{
 	padding: 15px 0 0 60px;
-	
 }
 .mode{
 	margin: 0px;
@@ -281,7 +264,7 @@ figcaption{
 }
 .pwd{
 	text-decoration: underline #bebbbb;
-} 
+}
 .text-valide{
 	color:green;
 	font-size: 10px;
@@ -299,12 +282,10 @@ figcaption{
 	justify-content: center;
 	padding-bottom: 10px;
 }
-
 .text-edit,
 .style-white{
 	color: white;
 }
-
 .style-btn-publier{
 	background-color: white;
 	color: black;
@@ -313,7 +294,6 @@ figcaption{
 	width: 216px;
 	height: 38px;
 	border-radius: 60px;
-	
 }
 .photo-introduction{
 	display: flex;
@@ -325,20 +305,18 @@ figcaption{
 	padding:3% 0 0 10%;
 }
 .edit-project{
-	margin-bottom: 50px;
+	margin-bottom:50px ;
 	display: flex;
 	justify-content: center;
-	gap: 31px;
+	gap: 35px;
 }
 .show-edit-projet{
 	display: flex;
 	padding-top:10px;
 }
-
 .show-edit-text{
 	display: flex;
 	padding-top: 3%;
-	
 }
 /*====================*/
 .show-message{
@@ -363,8 +341,7 @@ figcaption{
 	background:rgba(0, 0, 0, 0.3);
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	animation: fadIn .3s both;
+	justify-content: center; 
 }
 .modal-wrapper{	
 	overflow: auto;
@@ -373,16 +350,6 @@ figcaption{
 	padding: 24px; 
 	border-radius: 10px;
 	max-height: 500px;
-	animation: slideFromTop .5s both;
-}
-/*==== animation moda ====*/
-@keyframes fadeIn{
-	form{ opacity: 0;}
-	to { opacity: 1;}
-}
-@keyframes slideFromTop{
-	form { transform: translateY(-50px);}
-	to { transform: translateY(0px); }
 }
 .style-close-modal{
 	display: flex;
@@ -428,7 +395,8 @@ figcaption{
 }
 .style-btn-delete-gallery{
 	color: red;
-	margin-bottom: 48px;
+	margin-bottom: 50px ;
+	cursor: pointer;
 }
 /*======= css icone sur photo de modal =======*/
 .style-galeri-modal article{
@@ -452,11 +420,7 @@ figcaption{
 	color: white;
 	padding: 4px;
 }
-.style-galeri-modal .img:hover .btn-enlarge{
-	display: flex;
-}
-/*======css modal vu 2 ajoute photo =========*/
-
+/*======css modal vu 2 ajoute photo ========*/
 .close-add-modal{
 	display: flex;
 	justify-content:space-between;
@@ -475,13 +439,21 @@ figcaption{
 	height: 170px;
 	background: #E8F1F7;
 	border-radius: 3px;
-	padding: 25px;
 }
 .container-photo{
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	padding: 5px;
+	align-items:center;
+	padding-top: 20px;	
+}
+.add-photo img{
+	width: 100%;
+	height: 170px;	
+	padding-left: 33%;
+}
+.photo{
+	width: 60%;
+	height: 170px;
 }
 .btn-file{
 	border: 1px solid #CBD6DC;
@@ -502,10 +474,10 @@ figcaption{
 }
 .div-input-file #file{
 	left: 0;
-  top: 0;
-  opacity: 0;
-  position: absolute;
-  font-size: 90px;
+  	top: 0;
+  	opacity: 0;
+  	position: absolute;
+  	font-size: 90px;
 }
 .text-add-phot{
 	font-weight: 400;
@@ -552,17 +524,4 @@ figcaption{
 }
 #form-add-photo input select{
 	padding: 20px 0 20px 0;
-}
-/*********css photo ajoute **********/
-.add-photo img{
-	width: 60%;
-	height: 100%;
-	align-items: center;
-}
-.add-photo{
-	display: flex;
-	align-items: center;
-	justify-content: space-evenly;
-	margin: 0;
-	padding: 0;
 }

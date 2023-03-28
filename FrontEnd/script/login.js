@@ -3,8 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     connectForm();
 });
 
-
-
 //******* fonction connecte admin ******/
 function connectForm() {
     document.querySelector("#btn-connect").addEventListener("click", (event) => {
@@ -15,7 +13,6 @@ function connectForm() {
                 return errorMessage("Veuillez entrer un mail et un mot de passe");
             }
             if ((validEmail(emailLogin)) && (validPassword(passwordLogin))){
-            ////////////////////////////////
             return fetch("http://localhost:5678/api/users/login", {
                 method: "POST",
                 headers: {
@@ -37,8 +34,9 @@ function connectForm() {
                     document.location.href = "index.html";
             })
             .catch((error) => console.log(error));
-}});
-
+        }
+    })
+}
 
 //******** fonction message d'erreur *********//
 function errorMessage(message) {
@@ -49,12 +47,10 @@ function errorMessage(message) {
         errorMessage.classList.replace("show", "hide");
         errorMessage.textContent = "";
         },4000);
-    }
 }
 
 //******** fonction validation email *********//
 const validEmail = (inputEmail) => {
-    console.log(inputEmail)
     let emailRegExp = new RegExp('^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$','g');
     let testEmail = emailRegExp.test(inputEmail.value)
     console.log(testEmail)
