@@ -171,7 +171,7 @@ footer nav ul {
 	justify-content: flex-end;
 	margin: 2em
 }
-/*======= section gallery =======*/
+/*======= section gallery et filter =======*/
 img{
 	object-fit: cover;
 }
@@ -195,7 +195,7 @@ img{
 	background-color: #1D6154;
 	color: white;
 } 
-/*======= Fin Section Filter ======*/
+
 /*======= Section connexion ======*/
 a {
 	text-decoration: none;
@@ -273,8 +273,8 @@ figcaption{
 	color:red;
 	font-size: 10px;
 }
-/*======= Fin Section connexion ======*/
-/*========== section  admin========*/
+
+/*========== section page admin========*/
 .show-head-black{
 	background-color:black;
 	height: 50px;
@@ -398,6 +398,7 @@ figcaption{
 	margin-bottom: 50px ;
 	cursor: pointer;
 }
+
 /*======= css icone sur photo de modal =======*/
 .style-galeri-modal article{
 	position: relative;
@@ -420,7 +421,10 @@ figcaption{
 	color: white;
 	padding: 4px;
 }
-/*======css modal vu 2 ajoute photo ========*/
+.style-btn-cursor {
+	cursor: pointer;
+}
+/*======css modal vue: 2 ajoute photo ========*/
 .close-add-modal{
 	display: flex;
 	justify-content:space-between;
@@ -491,13 +495,18 @@ figcaption{
 	flex-direction: column;
 	align-items: center;
 }
+#form-add-photo{
+	border-bottom: 1px solid #B3B3B3;
+	padding-bottom: 20px;
+	margin-bottom: 10px;
+}
 .style-input-add-photo{
-	height: 50px;
+	height: 40px;
     font-size: 1.2em;
     border: none;
 	background-color: white;
     box-shadow: 0px 4px 14px rgb(0 0 0 / 9%);
-    margin:5px 0 20px 0;
+    margin:5px 0 15px 0;
 }
 .icone-add-photo{
 	color: rgb(157, 198, 245);
