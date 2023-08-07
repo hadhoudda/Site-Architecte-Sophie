@@ -11,7 +11,7 @@ const getData = async () => {
         const response = await fetch("http://localhost:5678/api/works")
         console.log(response)
         if (!response.ok) {
-            throw new Errr(`an error occured with status: ${response.status}`)
+            throw new Error(`an error occured with status: ${response.status}`)
         }
         const data = await response.json();
         console.log(data);
